@@ -1,0 +1,388 @@
+@echo off
+setlocal enabledelayedexpansion
+
+:* Define 
+
+set SETACTIVE=powercfg.exe -SETACTIVE
+set SET_DC_VALUE=powercfg.exe -SETDCVALUEINDEX
+set SET_AC_VALUE=powercfg.exe -SETACVALUEINDEX
+
+set PLAN_0=381b4222-f694-41f0-9685-ff5bb260df2e
+set PLAN_1=a1841308-3541-4fab-bc81-f71556f20b4a
+set PLAN_2=8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
+set PLAN_3=a8eabe8c-f6e2-4006-a8b9-930ad3e97b75
+
+:* Loading File
+for /F "eol=; delims== tokens=1,2" %%a in (%1) do (
+	set %%a=%%b
+)
+
+
+:* Get PowerPlan-GUID
+if not defined PLAN (
+	echo !!!error!!! not defined PLAN
+	goto ERROR_CRITICAL
+)
+	if !PLAN!==0 (
+		set PLAN_GUID=%PLAN_0%
+)
+	if !PLAN!==1 (
+		set PLAN_GUID=%PLAN_1%
+)
+	if !PLAN!==2 (
+		set PLAN_GUID=%PLAN_2%
+)
+	if !PLAN!==3 (
+		set PLAN_GUID=%PLAN_3%
+)
+
+
+:*:* nn-n)xxx (DC)
+:*if defined xxx_DC (
+:*	%SET_DC_VALUE% !PLAN_GUID! <GUID> <SUBID> !xxx_DC!
+:*	echo xxx_DC=!xxx_DC! 
+:*)
+:*:* nn-n)xxx (AC)
+:*if defined xxx_AC (
+:*	%SET_AC_VALUE% !PLAN_GUID! <GUID> <SUBID> !xxx_AC!
+:*	echo xxx_AC=!xxx_AC! 
+:*)
+
+
+
+:* 1)PLAN_GUID
+if defined PLAN_GUID (
+	%SETACTIVE% !PLAN_GUID!
+	echo PLAN=!PLAN!
+	echo PLAN_GUID=!PLAN_GUID!
+)
+
+:* 2)PASS (DC)
+if defined PASS_DC (
+	%SET_DC_VALUE% !PLAN_GUID! fea3413e-7e05-4911-9a71-700331f1c294 0e796bdb-100d-47d6-a2d5-f7d2daa51f51 !PASS_DC!
+	echo PASS_DC=!PASS_DC!
+)
+:* 2)PASS (AC)
+if defined PASS_AC (
+	%SET_AC_VALUE% !PLAN_GUID! fea3413e-7e05-4911-9a71-700331f1c294 0e796bdb-100d-47d6-a2d5-f7d2daa51f51 !PASS_AC!
+	echo PASS_AC=!PASS_AC!
+)
+
+:* 3)HDD (DC)
+if defined HDD_DC (
+	set /a HDD_DC=!HDD_DC! * 60
+	%SET_DC_VALUE% !PLAN_GUID! 0012ee47-9041-4b5d-9b77-535fba8b1442 6738e2c4-e8a5-4a42-b16a-e040e769756e !HDD_DC!
+	echo HDD_DC=!HDD_DC! sec.
+)
+:* 3)HDD (AC)
+if defined HDD_AC (
+	set /a HDD_AC=!HDD_AC! * 60
+	%SET_AC_VALUE% !PLAN_GUID! 0012ee47-9041-4b5d-9b77-535fba8b1442 6738e2c4-e8a5-4a42-b16a-e040e769756e !HDD_AC!
+	echo HDD_AC=!HDD_AC! sec.
+)
+
+:* 4)SlideShow (DC)
+if defined SSHOW_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 0d7dbae2-4294-402a-ba8e-26777e8488cd 309dce9b-bef4-4119-9921-a851fb12f0f4 !SSHOW_DC!
+	echo SSHOW_DC=!SSHOW_DC! 
+)
+:* 4)SlideShow (AC)
+if defined SSHOW_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 0d7dbae2-4294-402a-ba8e-26777e8488cd 309dce9b-bef4-4119-9921-a851fb12f0f4 !SSHOW_AC!
+	echo SSHOW_AC=!SSHOW_AC! 
+)
+
+:* 5)WLAN (DC)
+if defined WLAN_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 19cbb8fa-5279-450e-9fac-8a3d5fedd0c1 12bbebe6-58d6-4636-95bb-3217ef867c1a !WLAN_DC!
+	echo WLAN_DC=!WLAN_DC! 
+)
+:* 5)WLAN (AC)
+if defined WLAN_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 19cbb8fa-5279-450e-9fac-8a3d5fedd0c1 12bbebe6-58d6-4636-95bb-3217ef867c1a !WLAN_AC!
+	echo WLAN_AC=!WLAN_AC! 
+)
+
+:* 6-1)SLEEP_1 (DC)
+if defined SLEEP_1_DC (
+	set /a SLEEP_1_DC=!SLEEP_1_DC! * 60
+	%SET_DC_VALUE% !PLAN_GUID! 238c9fa8-0aad-41ed-83f4-97be242c8f20 29f6c1db-86da-48c5-9fdb-f2b67b1f44da !SLEEP_1_DC!
+	echo SLEEP_1_DC=!SLEEP_1_DC! sec.
+)
+:* 6-1)SLEEP_1 (AC)
+if defined SLEEP_1_AC (
+	set /a SLEEP_1_AC=!SLEEP_1_AC! * 60
+	%SET_AC_VALUE% !PLAN_GUID! 238c9fa8-0aad-41ed-83f4-97be242c8f20 29f6c1db-86da-48c5-9fdb-f2b67b1f44da !SLEEP_1_AC!
+	echo SLEEP_1_AC=!SLEEP_1_AC! sec.
+)
+
+:* 6-2)SLEEP_2 (DC)
+if defined SLEEP_2_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 238c9fa8-0aad-41ed-83f4-97be242c8f20 94ac6d29-73ce-41a6-809f-6363ba21b47e !SLEEP_2_DC!
+	echo SLEEP_2_DC=!SLEEP_2_DC! 
+)
+:* 6-2)SLEEP_2 (AC)
+if defined SLEEP_2_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 238c9fa8-0aad-41ed-83f4-97be242c8f20 94ac6d29-73ce-41a6-809f-6363ba21b47e !SLEEP_2_AC!
+	echo SLEEP_2_AC=!SLEEP_2_AC! 
+)
+
+:* 6-3)SLEEP_3 (DC)
+if defined SLEEP_3_DC (
+	set /a SLEEP_3_DC=!SLEEP_3_DC! * 60
+	%SET_DC_VALUE% !PLAN_GUID! 238c9fa8-0aad-41ed-83f4-97be242c8f20 9d7815a6-7ee4-497e-8888-515a05f02364 !SLEEP_3_DC!
+	echo SLEEP_3_DC=!SLEEP_3_DC! sec.
+)
+:* 6-3)SLEEP_3 (AC)
+if defined SLEEP_3_AC (
+	set /a SLEEP_3_AC=!SLEEP_3_AC! * 60
+	%SET_AC_VALUE% !PLAN_GUID! 238c9fa8-0aad-41ed-83f4-97be242c8f20 9d7815a6-7ee4-497e-8888-515a05f02364 !SLEEP_3_AC!
+	echo SLEEP_3_AC=!SLEEP_3_AC! sec.
+)
+
+:* 6-4)SLEEP_4 (DC)
+if defined SLEEP_4_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 238c9fa8-0aad-41ed-83f4-97be242c8f20 bd3b718a-0680-4d9d-8ab2-e1d2b4ac806d !SLEEP_4_DC!
+	echo SLEEP_4_DC=!SLEEP_4_DC!
+)
+:* 6-4)SLEEP_4 (AC)
+if defined SLEEP_4_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 238c9fa8-0aad-41ed-83f4-97be242c8f20 bd3b718a-0680-4d9d-8ab2-e1d2b4ac806d !SLEEP_4_AC!
+	echo SLEEP_4_AC=!SLEEP_4_AC!
+)
+
+:* 7)USB (DC)
+if defined USB_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 2a737441-1930-4402-8d77-b2bebba308a3 48e6b7a6-50f5-4782-a5d4-53bb8f07e226 !USB_DC!
+	echo USB_DC=!USB_DC! 
+)
+:* 7)USB (AC)
+if defined USB_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 2a737441-1930-4402-8d77-b2bebba308a3 48e6b7a6-50f5-4782-a5d4-53bb8f07e226 !USB_AC!
+	echo USB_AC=!USB_AC! 
+)
+
+:* 8-1)BUTTON_1 (DC)
+if defined BUTTON_1_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 4f971e89-eebd-4455-a8de-9e59040e7347 5ca83367-6e45-459f-a27b-476b1d01c936 !BUTTON_1_DC!
+	echo BUTTON_1_DC=!BUTTON_1_DC! 
+)
+:* 8-1)BUTTON_1 (AC)
+if defined BUTTON_1_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 4f971e89-eebd-4455-a8de-9e59040e7347 5ca83367-6e45-459f-a27b-476b1d01c936 !BUTTON_1_AC!
+	echo BUTTON_1_AC=!BUTTON_1_AC! 
+)
+
+:* 8-2)BUTTON_2 (DC)
+if defined BUTTON_2_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 4f971e89-eebd-4455-a8de-9e59040e7347 7648efa3-dd9c-4e3e-b566-50f929386280 !BUTTON_2_DC!
+	echo BUTTON_2_DC=!BUTTON_2_DC! 
+)
+:* 8-2)BUTTON_2 (AC)
+if defined BUTTON_2_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 4f971e89-eebd-4455-a8de-9e59040e7347 7648efa3-dd9c-4e3e-b566-50f929386280 !BUTTON_2_AC!
+	echo BUTTON_2_AC=!BUTTON_2_AC! 
+)
+
+:* 8-3)BUTTON_3 (DC)
+if defined BUTTON_3_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 4f971e89-eebd-4455-a8de-9e59040e7347 96996bc0-ad50-47ec-923b-6f41874dd9eb !BUTTON_3_DC!
+	echo BUTTON_3_DC=!BUTTON_3_DC! 
+)
+:* 8-3)BUTTON_3 (AC)
+if defined BUTTON_3_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 4f971e89-eebd-4455-a8de-9e59040e7347 96996bc0-ad50-47ec-923b-6f41874dd9eb !BUTTON_3_AC!
+	echo BUTTON_3_AC=!BUTTON_3_AC! 
+)
+
+:* 9)PCIEXP (DC)
+if defined PCIEXP_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 501a4d13-42af-4429-9fd1-a8218c268e20 ee12f906-d277-404b-b6da-e5fa1a576df5 !PCIEXP_DC!
+	echo PCIEXP_DC=!PCIEXP_DC! 
+)
+:* 9)PCIEXP (AC)
+if defined PCIEXP_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 501a4d13-42af-4429-9fd1-a8218c268e20 ee12f906-d277-404b-b6da-e5fa1a576df5 !PCIEXP_AC!
+	echo PCIEXP_AC=!PCIEXP_AC! 
+)
+
+:* 10-1)CPU_1 (DC)
+if defined CPU_1_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 54533251-82be-4824-96c1-47b60b740d00 893dee8e-2bef-41e0-89c6-b55d0929964c !CPU_1_DC!
+	echo CPU_1_DC=!CPU_1_DC! 
+)
+:* 10-1)CPU_1 (AC)
+if defined CPU_1_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 54533251-82be-4824-96c1-47b60b740d00 893dee8e-2bef-41e0-89c6-b55d0929964c !CPU_1_AC!
+	echo CPU_1_AC=!CPU_1_AC! 
+)
+
+:* 10-2)CPU_2 (DC)
+if defined CPU_2_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 54533251-82be-4824-96c1-47b60b740d00 94d3a615-a899-4ac5-ae2b-e4d8f634367f !CPU_2_DC!
+	echo CPU_2_DC=!CPU_2_DC! 
+)
+:* 10-2)CPU_2 (AC)
+if defined CPU_2_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 54533251-82be-4824-96c1-47b60b740d00 94d3a615-a899-4ac5-ae2b-e4d8f634367f !CPU_2_AC!
+	echo CPU_2_AC=!CPU_2_AC! 
+)
+
+:* 10-3)CPU_3 (DC)
+if defined CPU_3_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 54533251-82be-4824-96c1-47b60b740d00 bc5038f7-23e0-4960-96da-33abaf5935ec !CPU_3_DC!
+	echo CPU_3_DC=!CPU_3_DC! 
+)
+:* 10-3)CPU_3 (AC)
+if defined CPU_3_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 54533251-82be-4824-96c1-47b60b740d00 bc5038f7-23e0-4960-96da-33abaf5935ec !CPU_3_AC!
+	echo CPU_3_AC=!CPU_3_AC! 
+)
+
+:* 11-1)DISPLAY_1 (DC)
+if defined DISPLAY_1_DC (
+	set /a DISPLAY_1_DC=!DISPLAY_1_DC! * 60
+	%SET_DC_VALUE% !PLAN_GUID! 7516b95f-f776-4464-8c53-06167f40cc99 17aaa29b-8b43-4b94-aafe-35f64daaf1ee !DISPLAY_1_DC!
+	echo DISPLAY_1_DC=!DISPLAY_1_DC! sec.
+)
+:* 11-1)DISPLAY_1 (AC)
+if defined DISPLAY_1_AC (
+	set /a DISPLAY_1_AC=!DISPLAY_1_AC! * 60
+	%SET_AC_VALUE% !PLAN_GUID! 7516b95f-f776-4464-8c53-06167f40cc99 17aaa29b-8b43-4b94-aafe-35f64daaf1ee !DISPLAY_1_AC!
+	echo DISPLAY_1_AC=!DISPLAY_1_AC! sec.
+)
+
+:* 11-2)DISPLAY_2 (DC)
+if defined DISPLAY_2_DC (
+	set /a DISPLAY_2_DC=!DISPLAY_2_DC! * 60
+	%SET_DC_VALUE% !PLAN_GUID! 7516b95f-f776-4464-8c53-06167f40cc99 3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e !DISPLAY_2_DC!
+	echo DISPLAY_2_DC=!DISPLAY_2_DC! sec.
+)
+:* 11-2)DISPLAY_2 (AC)
+if defined DISPLAY_2_AC (
+	set /a DISPLAY_2_AC=!DISPLAY_2_AC! * 60
+	%SET_AC_VALUE% !PLAN_GUID! 7516b95f-f776-4464-8c53-06167f40cc99 3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e !DISPLAY_2_AC!
+	echo DISPLAY_2_AC=!DISPLAY_2_AC! sec.
+)
+
+:* 11-3)DISPLAY_3 (DC)
+if defined DISPLAY_3_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 7516b95f-f776-4464-8c53-06167f40cc99 aded5e82-b909-4619-9949-f5d71dac0bcb !DISPLAY_3_DC!
+	echo DISPLAY_3_DC=!DISPLAY_3_DC! 
+)
+:* 11-3)DISPLAY_3 (AC)
+if defined DISPLAY_3_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 7516b95f-f776-4464-8c53-06167f40cc99 aded5e82-b909-4619-9949-f5d71dac0bcb !DISPLAY_3_AC!
+	echo DISPLAY_3_AC=!DISPLAY_3_AC! 
+)
+
+:* 11-4)DISPLAY_4 (DC)
+if defined DISPLAY_4_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 7516b95f-f776-4464-8c53-06167f40cc99 f1fbfde2-a960-4165-9f88-50667911ce96 !DISPLAY_4_DC!
+	echo DISPLAY_4_DC=!DISPLAY_4_DC! 
+)
+:* 11-4)DISPLAY_4 (AC)
+if defined DISPLAY_4_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 7516b95f-f776-4464-8c53-06167f40cc99 f1fbfde2-a960-4165-9f88-50667911ce96 !DISPLAY_4_AC!
+	echo DISPLAY_4_AC=!DISPLAY_4_AC! 
+)
+
+:* 12-1)MULTI_1 (DC)
+if defined MULTI_1_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 9596fb26-9850-41fd-ac3e-f7c3c00afd4b 03680956-93bc-4294-bba6-4e0f09bb717f !MULTI_1_DC!
+	echo MULTI_1_DC=!MULTI_1_DC! 
+)
+:* 12-1)MULTI_1 (AC)
+if defined MULTI_1_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 9596fb26-9850-41fd-ac3e-f7c3c00afd4b 03680956-93bc-4294-bba6-4e0f09bb717f !MULTI_1_AC!
+	echo MULTI_1_AC=!MULTI_1_AC! 
+)
+
+:* 12-2)MULTI_2 (DC)
+if defined MULTI_2_DC (
+	%SET_DC_VALUE% !PLAN_GUID! 9596fb26-9850-41fd-ac3e-f7c3c00afd4b 34c7b99f-9a6d-4b3c-8dc7-b6693b78cef4 !MULTI_2_DC!
+	echo MULTI_2_DC=!MULTI_2_DC! 
+)
+:* 12-2)MULTI_2 (AC)
+if defined MULTI_2_AC (
+	%SET_AC_VALUE% !PLAN_GUID! 9596fb26-9850-41fd-ac3e-f7c3c00afd4b 34c7b99f-9a6d-4b3c-8dc7-b6693b78cef4 !MULTI_2_AC!
+	echo MULTI_2_AC=!MULTI_2_AC! 
+)
+
+:* 13-1)BUTTERY_1 (DC)
+if defined BUTTERY_1_DC (
+	%SET_DC_VALUE% !PLAN_GUID! e73a048d-bf27-4f12-9731-8b2076e8891f 637ea02f-bbcb-4015-8e2c-a1c7b9c0b546 !BUTTERY_1_DC!
+	echo BUTTERY_1_DC=!BUTTERY_1_DC! 
+)
+:* 13-1)BUTTERY_1 (AC)
+if defined BUTTERY_1_AC (
+	%SET_AC_VALUE% !PLAN_GUID! e73a048d-bf27-4f12-9731-8b2076e8891f 637ea02f-bbcb-4015-8e2c-a1c7b9c0b546 !BUTTERY_1_AC!
+	echo BUTTERY_1_AC=!BUTTERY_1_AC! 
+)
+
+:* 13-2)BUTTERY_2 (DC)
+if defined BUTTERY_2_DC (
+	%SET_DC_VALUE% !PLAN_GUID! e73a048d-bf27-4f12-9731-8b2076e8891f 8183ba9a-e910-48da-8769-14ae6dc1170a !BUTTERY_2_DC!
+	echo BUTTERY_2_DC=!BUTTERY_2_DC! 
+)
+:* 13-2)BUTTERY_2 (AC)
+if defined BUTTERY_2_AC (
+	%SET_AC_VALUE% !PLAN_GUID! e73a048d-bf27-4f12-9731-8b2076e8891f 8183ba9a-e910-48da-8769-14ae6dc1170a !BUTTERY_2_AC!
+	echo BUTTERY_2_AC=!BUTTERY_2_AC! 
+)
+
+:* 13-3)BUTTERY_3 (DC)
+if defined BUTTERY_3_DC (
+	%SET_DC_VALUE% !PLAN_GUID! e73a048d-bf27-4f12-9731-8b2076e8891f 9a66d8d7-4ff7-4ef9-b5a2-5a326ca2a469 !BUTTERY_3_DC!
+	echo BUTTERY_3_DC=!BUTTERY_3_DC! 
+)
+:* 13-3)BUTTERY_3 (AC)
+if defined BUTTERY_3_AC (
+	%SET_AC_VALUE% !PLAN_GUID! e73a048d-bf27-4f12-9731-8b2076e8891f 9a66d8d7-4ff7-4ef9-b5a2-5a326ca2a469 !BUTTERY_3_AC!
+	echo BUTTERY_3_AC=!BUTTERY_3_AC! 
+)
+
+:* 13-4)BUTTERY_4 (DC)
+if defined BUTTERY_4_DC (
+	%SET_DC_VALUE% !PLAN_GUID! e73a048d-bf27-4f12-9731-8b2076e8891f bcded951-187b-4d05-bccc-f7e51960c258 !BUTTERY_4_DC!
+	echo BUTTERY_4_DC=!BUTTERY_4_DC! 
+)
+:* 13-4)BUTTERY_4 (AC)
+if defined BUTTERY_4_AC (
+	%SET_AC_VALUE% !PLAN_GUID! e73a048d-bf27-4f12-9731-8b2076e8891f bcded951-187b-4d05-bccc-f7e51960c258 !BUTTERY_4_AC!
+	echo BUTTERY_4_AC=!BUTTERY_4_AC! 
+)
+
+:* 13-5)BUTTERY_5 (DC)
+if defined BUTTERY_5_DC (
+	%SET_DC_VALUE% !PLAN_GUID! e73a048d-bf27-4f12-9731-8b2076e8891f d8742dcb-3e6a-4b3c-b3fe-374623cdcf06 !BUTTERY_5_DC!
+	echo BUTTERY_5_DC=!BUTTERY_5_DC! 
+)
+:* 13-5)BUTTERY_5 (AC)
+if defined BUTTERY_5_AC (
+	%SET_AC_VALUE% !PLAN_GUID! e73a048d-bf27-4f12-9731-8b2076e8891f d8742dcb-3e6a-4b3c-b3fe-374623cdcf06 !BUTTERY_5_AC!
+	echo BUTTERY_5_AC=!BUTTERY_5_AC! 
+)
+
+:* 13-6)BUTTERY_6 (DC)
+if defined BUTTERY_6_DC (
+	%SET_DC_VALUE% !PLAN_GUID! e73a048d-bf27-4f12-9731-8b2076e8891f f3c5027d-cd16-4930-aa6b-90db844a8f00 !BUTTERY_6_DC!
+	echo BUTTERY_6_DC=!BUTTERY_6_DC! 
+)
+:* 13-5)BUTTERY_6 (AC)
+if defined BUTTERY_6_AC (
+	%SET_AC_VALUE% !PLAN_GUID! e73a048d-bf27-4f12-9731-8b2076e8891f f3c5027d-cd16-4930-aa6b-90db844a8f00 !BUTTERY_6_AC!
+	echo BUTTERY_6_AC=!BUTTERY_6_AC! 
+)
+
+
+goto END
+
+:ERROR_CRITICAL
+endlocal
+exit /b -1
+
+:END
+endlocal
+exit /b 0
+
