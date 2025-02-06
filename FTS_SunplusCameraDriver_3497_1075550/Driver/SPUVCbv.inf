@@ -1,0 +1,609 @@
+; Localized     08/10/2012 14:00 (GMT+08:00) 3.4.9.7  SPUVCbv.inf 
+; Video Capture Driver installation information 
+; Copyright (c) 2012-2017 Sunplus Innovation Tech 
+; Manufacturer: Sunplus Innovation Tech
+
+[OEMInf]
+VerifyMark="SunplusIT FJ Camera"
+
+[Version]
+;LayoutFile=Layout.inf, Layout1.inf, Layout2.inf
+signature="$CHICAGO$"
+Class=Image
+ClassGUID={6bdd1fc6-810f-11d0-bec7-08002be2092f}
+Provider=%ProviderName%
+DriverVer=08/10/2012,3.4.9.7
+CatalogFile=SPUVCB.cat
+
+[CAMERA.DeviceData]
+Server=local
+UI DLL=sti.dll
+UI Class ID={5d8ef5a3-ac13-11d2-a093-00c04f72dc3c}
+TwainDS=%CAMERA.DeviceDesc%
+
+[ControlFlags]
+ExcludeFromSelect=*
+
+[DestinationDirs]
+DefaultDestDir=11
+CAMERA.CopyDrivers32=10,system32\drivers
+CAMERA.CopyDrivers64=10,system32\drivers
+CAMERA.CopyDLL=11
+CAMERA.CopyIni=10
+CAMERA.CopyIni64=10
+Filters.NTx86.Files = 10,SysWOW64 ; for x86 AX
+Filters.NTamd64.Files = 11  ;for x64 AX 
+SPCoinstaller32=11
+SPCoinstaller64=11
+CAMERA.TWAINConf.CopyFiles = 10
+CAMERA.TWAIN.CopyFiles = 10,twain_32
+
+[SourceDisksNames]
+1=%DiskName%,,,,
+
+[SourceDisksFiles]
+SPUVCbv.sys=1
+SPUVCbv_x64.sys=1
+DextUVCb.ax=1
+DextUVCb_x64.ax=1 ;add for x64 AX
+VCamPPage.dll=1
+VCamPPage_x64.dll=1
+CoInstaller.dll=1
+CoInstaller_x64.dll=1
+SPRemove.exe=1
+SPRemove_x64.exe=1
+Remove.ini=1
+un_dext.exe=1
+Dext_01.ini=1
+Dext_02.ini=1
+Dext_04.ini=1
+Dext_05.ini=1
+Dext_06.ini=1
+Dext_07.ini=1
+Dext_08.ini=1
+Dext_09.ini=1
+Dext_10.ini=1
+Dext_1046.ini=1
+Dext_11.ini=1
+Dext_12.ini=1
+Dext_13.ini=1
+Dext_14.ini=1
+Dext_16.ini=1
+Dext_17.ini=1
+Dext_18.ini=1
+Dext_19.ini=1
+Dext_20.ini=1
+Dext_2052.ini=1
+Dext_21.ini=1
+Dext_22.ini=1
+Dext_24.ini=1
+Dext_25.ini=1
+Dext_27.ini=1
+Dext_29.ini=1
+Dext_30.ini=1
+Dext_31.ini=1
+Dext_36.ini=1
+TWAIN2080.ini=1
+TWAIN2080.ds=1
+TWAIN2080.src=1
+
+; =================== Table of content =========================
+
+[Manufacturer]
+%Chicony.MfgName%=Chicony.Section,NTx86,NTamd64
+
+; =================== Sunplus ==================================
+
+[Chicony.Section]
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B319&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B2FC&MI_00
+
+[Chicony.Section.NTx86]
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B319&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B2FC&MI_00
+
+[Chicony.Section.NTamd64]
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B319&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B2FC&MI_00
+
+;==========================================================================
+; USB 2.0 Camera
+;==========================================================================
+[SPUVCB.Device]
+Include=    ks.inf,kscaptur.inf;,ksfilter.inf,sti.inf 
+Needs=      KS.Registration,KSCAPTUR.Registration ;,SPUVCB.DSHEXT.Registration
+DelReg=     SPUVCB.DelReg           ; Add uninstall entries
+AddReg=     SPUVCB.AddReg,SPUVCB_PROPERTY.AddReg,SPUVCB.PlugIns,SPUVCB.Filters,SPUVCB.Uninstall.AddReg
+CopyFiles=  CAMERA.CopyDrivers32,CAMERA.CopyDLL,CAMERA.CopyIni,CAMERA.TWAINConf.CopyFiles,CAMERA.TWAIN.CopyFiles
+
+SubClass=StillImage
+DeviceType=3
+DeviceSubType=0x1
+Capabilities=0x00000031
+DeviceData=CAMERA.DeviceData
+ICMProfiles="sRGB Color Space Profile.icm"
+
+[SPUVCB.Device.NT]
+Include=    ks.inf,kscaptur.inf,ksfilter.inf,sti.inf 
+Needs=      KS.Registration,KSCAPTUR.Registration.NT  ;,SPUVCB.DSHEXT.Registration.NT
+DelReg=     SPUVCB.DelReg           ; Add uninstall entries
+AddReg=     SPUVCB.AddReg,SPUVCB_PROPERTY.AddReg,SPUVCB.PlugIns,SPUVCB.Filters,SPUVCB.Uninstall.AddReg.NT,TopologyNodeRegistration
+CopyFiles=  CAMERA.CopyDrivers32,CAMERA.CopyDLL,CAMERA.CopyIni,CAMERA.TWAINConf.CopyFiles,CAMERA.TWAIN.CopyFiles
+
+SubClass=StillImage
+DeviceType=3
+DeviceSubType=0x1
+Capabilities=0x00000031
+DeviceData=CAMERA.DeviceData
+ICMProfiles="sRGB Color Space Profile.icm"
+
+[SPUVCB.Device_x64.ntamd64]
+Include=    ks.inf,kscaptur.inf,ksfilter.inf,sti.inf 
+Needs=      KS.Registration,KSCAPTUR.Registration.NT  ;,SPUVCB.DSHEXT.Registration.NT
+DelReg=     SPUVCB.DelReg           ; Add uninstall entries
+AddReg=     SPUVCB64.AddReg,SPUVCB_PROPERTY.AddReg,SPUVCB.PlugIns.x64,SPUVCB.x64.Filters,SPUVCB.Uninstall_x64.ntamd64
+CopyFiles=  CAMERA.CopyDrivers64,Filters.NTx86.Files,Filters.NTamd64.Files,CAMERA.CopyIni64,CAMERA.TWAINConf.CopyFiles,CAMERA.TWAIN.CopyFiles
+
+SubClass=StillImage
+DeviceType=3
+DeviceSubType=0x1
+Capabilities=0x00000031
+DeviceData=CAMERA.DeviceData
+ICMProfiles="sRGB Color Space Profile.icm"
+
+; --------------------------------------------------------------
+
+[SPUVCB.Uninstall.AddReg]
+HKLM,%UIF%,DisplayName,,%CAMERA.DeviceDesc%
+HKLM,%UIF%,UninstallString,,"%10%\un_dext.exe"
+HKLM,%UIF%,EstimatedSize,0x10001,7847
+HKLM,%UIF%,Publisher,,"SunplusIT"
+HKLM,%UIF%,DisplayVersion,,"3.4.9.7"
+
+[SPUVCB.Uninstall.AddReg.NT]
+HKLM,%UIF%,DisplayName,,%CAMERA.DeviceDesc%
+HKLM,%UIF%,UninstallString,,"%10%\un_dext.exe"
+HKLM,%UIF%,EstimatedSize,0x10001,7847
+HKLM,%UIF%,Publisher,,"SunplusIT"
+HKLM,%UIF%,DisplayVersion,,"3.4.9.7"
+
+[SPUVCB.Uninstall_x64.ntamd64]
+HKLM,%UIF_X64%,DisplayName,,%CAMERA.DeviceDesc%
+HKLM,%UIF_X64%,UninstallString,,"%10%\un_dext.exe"
+HKLM,%UIF_X64%,EstimatedSize,0x10001,7847
+HKLM,%UIF_X64%,Publisher,,"SunplusIT"
+HKLM,%UIF_X64%,DisplayVersion,,"3.4.9.7"
+
+[SPUVCB.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,%DriverFullName%
+HKR,,PageOutWhenUnopened,3,00
+HKR,,DontSuspendIfStreamsAreRunning,3,01
+HKR,,HardwareConfig,1,1
+HKR,,USDClass,,"{0527d1d0-88c2-11d2-82c7-00c04f8ec183}"
+HKR,,OkToHibernate,3,01
+HKR,,UvcFlags,0x00010001,0x00000010
+
+[SPUVCB64.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,%DriverFullName64%
+HKR,,PageOutWhenUnopened,3,00
+HKR,,DontSuspendIfStreamsAreRunning,3,01
+HKR,,HardwareConfig,1,1
+HKR,,USDClass,,"{0527d1d0-88c2-11d2-82c7-00c04f8ec183}"
+HKR,,OkToHibernate,3,01
+HKR,,UvcFlags,0x00010001,0x00000010
+
+[SPUVCB_PROPERTY.AddReg]
+;[HKEY_LOCAL_MACHINE\SOFTWARE\%SPUVCb.ProductName%\CONTROL]
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"Flip",0x10001,00
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"IMAGETYPE",0x10001,1  ; 6:420 compression, 2:422 non-compression
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"PacketSizeMax",0x10001,6
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"ApplyRegistryValues",0x10001,1
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"QTableIndex",0x10001,3 ; 0:Q50,1:Q70,2:Q80,3:Q85
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"Simulate160120",0x10001,0 ; 0:F/W support, 1:SW simulate
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"NoSensorSize",0x10001,0 ; 0:F/W support, 1:SW simulate
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"VGANoInterpolate",0x10001,0 ; 0:Interpolate, 1:No Interpolate for VGA size
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"ISOreceiveLength",0x10001,2 ;2:CA536/CA538, 1:Other
+
+;Hide
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"DebugMessage",0x10001,0
+;CA538A syncByte
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"TotalSyncByte",0x10001,12           ;CA536:1, CA538:12
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"SyncByte0",0x10001,255              ;CA503:255, CA504:254, CA533:255, CA536:255
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"SyncByte1",0x10001,1                ;CA503:1, CA504:None, CA533:1, CA536:1
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"NextSyncByte",0x10001,255           ;CA503:255, CA504:128, CA533:255, CA536:255
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"PropertyByteOffset",0x10001,0       ;CA503:15, CA504:9, CA533:15, CA536:3, CA538:1
+HKLM,Software\%SPUVCb.ProductName%\CONTROL,"NoDropFrame",0x10001,1              ;CA536:1, Other:0
+
+;AEBANDING
+;HKLM,Software\%SPUVCb.ProductName%\CONTROL,"AEBANDINGTYPE",0x10001,2    ;1:Normal, 2:Band 60Hz, 3:Band 50Hz
+;HKLM,Software\%SPUVCb.ProductName%\CONTROL,"ShowFrameRate",0x10001,0  ; 1: show frame, 2: show compratio, 3: show true status
+
+HKLM,Software\%SPUVCB.ProductName%\CONTROL,"HwSnapSaveOK",0x10001,0
+HKCU,Software\%SPUVCB.ProductName%\CONTROL,"HwSnapSaveOK",0x10001,0
+;HKLM,Software\%SPUVCb.ProductName%\CONTROL,"HwSnapDstPath",,""
+
+;Color Setting
+HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"ApplyRegistryValues",0x10001,1
+HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"AutoBandwidth",0x10001,1
+HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"AutoExposal",0x10001,1
+HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"AutoGain",0x10001,1
+HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"AutoWhiteBalance",0x10001,1
+HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"HFlip",0x10001,0
+HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"VFlip",0x10001,0
+;HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"Banding",0x10001,0
+HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"Bandwidth",0x10001,7
+;HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"Exposal",0x10001,-6
+;HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"Gain",0x10001,4
+;HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"Whitebalance",0x10001,0
+;HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"BackLight",0x10001,0
+HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"LowLight",0x10001,1
+HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"Colorenable",0x10001,1
+HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"ZoomScale",0x10001,10
+HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"PanUpDownSize",0x10001,0
+HKLM,Software\%SPUVCb.ProductName%\VIDEOPROCAMP,"PanLeftRightSize",0x10001,0
+
+;Color Setting Default
+;HKLM,Software\%SPUVCb.ProductName%\DEFAULT,"Brightness",0x10001,128
+;HKLM,Software\%SPUVCb.ProductName%\DEFAULT,"Contrast",0x10001,1
+;HKLM,Software\%SPUVCb.ProductName%\DEFAULT,"Hue",0x10001,32
+;HKLM,Software\%SPUVCb.ProductName%\DEFAULT,"Saturation",0x10001,1
+;HKLM,Software\%SPUVCb.ProductName%\DEFAULT,"Sharpness",0x10001,0
+
+;User Settings
+HKLM,Software\%SPUVCB.ProductName%\ControlSave,"Brightness",0x10001,0
+HKLM,Software\%SPUVCB.ProductName%\ControlSave,"Contrast",0x10001,0
+HKLM,Software\%SPUVCB.ProductName%\ControlSave,"Gamma",0x10001,0
+HKLM,Software\%SPUVCB.ProductName%\ControlSave,"Hue",0x10001,0
+HKLM,Software\%SPUVCB.ProductName%\ControlSave,"Saturation",0x10001,0
+HKLM,Software\%SPUVCB.ProductName%\ControlSave,"Sharpness",0x10001,0
+HKLM,Software\%SPUVCb.ProductName%\ControlSave,"Bandwidth",0x10001,0
+;HKLM,Software\%SPUVCb.ProductName%\ControlSave,"Exposal",0x10001,0
+;HKLM,Software\%SPUVCb.ProductName%\ControlSave,"Whitebalance",0x10001,0
+HKLM,Software\%SPUVCb.ProductName%\ControlSave,"Banding",0x10001,0
+HKLM,Software\%SPUVCb.ProductName%\ControlSave,"HFlip",0x10001,0
+HKLM,Software\%SPUVCb.ProductName%\ControlSave,"VFlip",0x10001,0
+HKLM,Software\%SPUVCb.ProductName%\ControlSave,"CustomPhotoAblum",,""
+;HKLM,Software\%SPUVCb.ProductName%\ControlSave,"Gain",0x10001,0		;RED++
+HKLM,Software\%SPUVCb.ProductName%\ControlSave,"AutoBandwidth",0x10001,1	; dw++, for auto bandwidth. 1: yes, 2: no
+HKLM,Software\%SPUVCb.ProductName%\ControlSave,"AutoExposal",0x10001,1	; dw++, for auto exposal. 1: yes, 2: no
+HKLM,Software\%SPUVCb.ProductName%\ControlSave,"AutoWhiteBalance",0x10001,1	; dw++, for auto whitebalance. 1: yes, 2: no
+HKLM,Software\%SPUVCb.ProductName%\ControlSave,"AutoGain",0x10001,1	; dw++, for auto gain. 1: yes, 2: no
+;HKLM,Software\%SPUVCb.ProductName%\ControlSave,"BackLight",0x10001,0
+;HKLM,Software\%SPUVCb.ProductName%\ControlSave,"LowLight",0x10001,255
+HKLM,Software\%SPUVCb.ProductName%\ControlSave,"Rotation",0x10001,0
+
+[SPUVCB.DelReg]
+;HKLM,SOFTWARE\%SPUVCB.ProductName%
+
+
+[TopologyNodeRegistration]
+HKLM,%MediaCategories%\%GUID.VideoStreaming%,Name,,%Node.VideoStreaming%
+HKLM,%MediaCategories%\%GUID.VideoStreaming%,Display,1,00,00,00,00
+HKLM,%MediaCategories%\%GUID.VideoInputTerminal%,Name,,%Node.VideoInputTerminal%
+HKLM,%MediaCategories%\%GUID.VideoInputTerminal%,Display,1,00,00,00,00
+HKLM,%MediaCategories%\%GUID.VideoOutputTerminal%,Name,,%Node.VideoOutputTerminal%
+HKLM,%MediaCategories%\%GUID.VideoOutputTerminal%,Display,1,00,00,00,00
+HKLM,%MediaCategories%\%GUID.VideoSelector%,Name,,%Node.VideoSelector%
+HKLM,%MediaCategories%\%GUID.VideoSelector%,Display,1,00,00,00,00
+HKLM,%MediaCategories%\%GUID.VideoProcessing%,Name,,%Node.VideoProcessing%
+HKLM,%MediaCategories%\%GUID.VideoProcessing%,Display,1,00,00,00,00
+HKLM,%MediaCategories%\%GUID.VideoCameraTerminal%,Name,,%Node.VideoCameraTerminal%
+HKLM,%MediaCategories%\%GUID.VideoCameraTerminal%,Display,1,00,00,00,00
+HKLM,%MediaCategories%\%GUID.VideoExtensionUnit%,Name,,%Node.VideoExtensionUnit%
+HKLM,%MediaCategories%\%GUID.VideoExtensionUnit%,Display,1,00,00,00,00
+
+[SPUVCB.Device.Services]
+AddService = %DriverName%,0x00000002,SPUVCB.ServiceInstall
+
+[SPUVCB.Device.NT.Services]
+AddService = %DriverName%,0x00000002,SPUVCB.ServiceInstall
+
+[SPUVCB.Device_x64.ntamd64.Services]
+AddService = %DriverName%,0x00000002,SPUVCB64.ServiceInstall
+
+[SPUVCB.RemoveDevice.Services]
+DelService = %DriverName%,0x00000204
+
+[SPUVCB.ServiceInstall]
+DisplayName   = %SPUVCb.ServiceName%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%  ;2002,4,11
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %10%\System32\Drivers\%DriverFullName%
+AddReg = SPUVCB.ServiceAddReg
+
+[SPUVCB64.ServiceInstall]
+DisplayName   = %SPUVCb.ServiceName%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%  ;2002,4,11
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %10%\System32\Drivers\%DriverFullName64%
+AddReg = SPUVCB.ServiceAddReg
+
+[SPUVCB.ServiceAddReg]
+HKR,"Param","ProductName",,%SPUVCb.ProductName%
+HKR,"Param","DextIniFile",,%CAMERA.DextIniFile%
+HKR,"Param","EnableSS",0x10001,1		;Selective suspend switch. 0: disable, others: enable
+
+[SPUVCb.Device.NT.CoInstallers]
+CopyFiles = SPCoinstaller32
+AddReg = SPUVCb.CoInstaller_AddReg
+
+[SPUVCB.Device_x64.ntamd64.CoInstallers]
+CopyFiles = SPCoinstaller64
+AddReg = SPUVCb.CoInstaller64_AddReg
+
+[SPUVCb.CoInstaller_AddReg]
+HKR,,CoInstallers32, 0x00010000, "CoInstaller.dll, SPCoInstaller"
+
+[SPUVCb.CoInstaller64_AddReg]
+HKR,,CoInstallers32, 0x00010000, "CoInstaller_x64.dll, SPCoInstaller"
+
+[SPUVCB.Device.HW]
+AddReg = SPUVCB.HW.AddReg
+
+[SPUVCB.Device.NT.HW]
+AddReg = SPUVCB.HW.AddReg
+
+[SPUVCB.Device_x64.ntamd64.HW]
+AddReg = SPUVCB.HW.AddReg
+
+[SPUVCB.HW.AddReg]
+HKR,,"FriendlyName",,%SPUVCB.Capture%
+
+[SPUVCB.Device.Interfaces]
+AddInterface=%KSCATEGORY_CAPTURE%,"GLOBAL",SPUVCB.VideoCapture,
+AddInterface=%KSCATEGORY_VIDEO%,"GLOBAL",SPUVCB.VideoCapture,
+
+[SPUVCB.Device.NT.Interfaces]
+AddInterface=%KSCATEGORY_CAPTURE%,"GLOBAL",SPUVCB.VideoCapture,
+AddInterface=%KSCATEGORY_VIDEO%,"GLOBAL",SPUVCB.VideoCapture,
+
+[SPUVCB.Device_x64.ntamd64.Interfaces]
+AddInterface=%KSCATEGORY_CAPTURE%,"GLOBAL",SPUVCB.VideoCapture,
+AddInterface=%KSCATEGORY_VIDEO%,"GLOBAL",SPUVCB.VideoCapture,
+
+[SPUVCB.VideoCapture]
+AddReg=SPUVCB.VideoCapture.AddReg
+
+[SPUVCB.VideoCapture.AddReg]
+HKR,,CLSID,,%ProxyVCap.CLSID%
+HKR,,FriendlyName,,%SPUVCB.Capture%
+;VideoProcAmp Property Page
+HKR,PageAliases,"{71F96464-78F3-11d0-A18C-00A0C9118956}",1,AB,F4,05,17, 4A,AF, DC,41, 9F, F5, D7, 74, C4, 98, 7E, 0E ;AX4
+HKR,PageAliases,"{71F96465-78F3-11d0-A18C-00A0C9118956}",1,AD,83,97,BF, E4,5F, 1F,4E, A3, 1E, 34, F7, 1B, 8F, B2, A2 ;AX6 
+
+[SPUVCB.Filters]
+;VideoProcAmp Property Page
+HKCR,CLSID\%CAMERA.GUID_AX4%,,,%PropPage_CustomVideoSet%
+;HKCR,CLSID\%CAMERA.GUID_AX4%\InprocServer32,,,%CAMERA.DextFullName%
+HKCR,CLSID\%CAMERA.GUID_AX4%\InprocServer32,,,%CAMERA.DextDLLName%
+HKCR,CLSID\%CAMERA.GUID_AX4%\InprocServer32,ThreadingModel,,Both
+
+HKCR,CLSID\%CAMERA.GUID_AX6%,,,%PropPage_CustomSpecialEFfect%
+HKCR,CLSID\%CAMERA.GUID_AX6%\InprocServer32,,,%CAMERA.DextDLLName%
+HKCR,CLSID\%CAMERA.GUID_AX6%\InprocServer32,ThreadingModel,,Both
+
+HKLM,System\CurrentControlSet\Control\MediaSets\%CAMERA.GUID_AX1%\PropertyPages\%CAMERA.GUID_AX4%,,,%PropPage_CustomVideoSet%
+HKLM,System\CurrentControlSet\Control\MediaSets\%CAMERA.GUID_AX1%\PropertyPages\%CAMERA.GUID_AX6%,,,%PropPage_CustomVideoProcAmp1%
+
+[SPUVCB.x64.Filters]
+;VideoProcAmp Property Page
+HKCR,CLSID\%CAMERA.GUID_AX4%,,,%PropPage_CustomVideoSet%
+;HKCR,CLSID\%CAMERA.GUID_AX4%\InprocServer32,,,%CAMERA.DextFullName_x64%
+HKCR,CLSID\%CAMERA.GUID_AX4%\InprocServer32,,,%CAMERA.DextDLLName_x64%
+HKCR,CLSID\%CAMERA.GUID_AX4%\InprocServer32,ThreadingModel,,Both
+
+HKCR,Wow6432Node\CLSID\%CAMERA.GUID_AX4%,,,%PropPage_CustomVideoSet%
+HKCR,Wow6432Node\CLSID\%CAMERA.GUID_AX4%\InprocServer32,,,%CAMERA.DextDLLName%
+HKCR,Wow6432Node\CLSID\%CAMERA.GUID_AX4%\InprocServer32,ThreadingModel,,Both
+
+;CameraControl Page
+HKCR,CLSID\%CAMERA.GUID_AX6%,,,%PropPage_CustomSpecialEFfect%
+HKCR,CLSID\%CAMERA.GUID_AX6%\InprocServer32,,,%CAMERA.DextDLLName_x64%
+HKCR,CLSID\%CAMERA.GUID_AX6%\InprocServer32,ThreadingModel,,Both
+
+HKCR,Wow6432Node\CLSID\%CAMERA.GUID_AX6%,,,%PropPage_CustomSpecialEFfect%
+HKCR,Wow6432Node\CLSID\%CAMERA.GUID_AX6%\InprocServer32,,,%CAMERA.DextDLLName%
+HKCR,Wow6432Node\CLSID\%CAMERA.GUID_AX6%\InprocServer32,ThreadingModel,,Both
+
+HKLM,System\CurrentControlSet\Control\MediaSets\%CAMERA.GUID_AX1%\PropertyPages\%CAMERA.GUID_AX4%,,,%PropPage_CustomVideoSet%
+HKLM,System\CurrentControlSet\Control\MediaSets\%CAMERA.GUID_AX1%\PropertyPages\%CAMERA.GUID_AX6%,,,%PropPage_CustomVideoProcAmp1%
+
+
+[SPUVCB.PlugIns]
+;Custom Property Page
+HKCR,CLSID\%CAMERA.GUID_AX1%,,,%PlugIn_CustomCameraProp%
+HKCR,CLSID\%CAMERA.GUID_AX1%\InprocServer32,,,%CAMERA.DextFullName%
+HKCR,CLSID\%CAMERA.GUID_AX1%\InprocServer32,ThreadingModel,,Both
+HKLM,System\CurrentControlSet\Control\MediaInterfaces\%CAMERA.GUID_AX1%,,,%PlugIn_CustomCameraProp%
+HKLM,System\CurrentControlSet\Control\MediaInterfaces\%CAMERA.GUID_AX1%,IID,1,0xBA,0x42,0x57,0x75, 0xAD,0xC3, 0x0A,0x45, 0xBF, 0x7B, 0x8E, 0x4F, 0x9D, 0x20, 0xA8, 0x30
+
+[SPUVCB.PlugIns.x64]
+;Custom Property Page
+HKCR,CLSID\%CAMERA.GUID_AX1%,,,%PlugIn_CustomCameraProp%
+HKCR,CLSID\%CAMERA.GUID_AX1%\InprocServer32,,,%CAMERA.DextFullName_x64%
+HKCR,CLSID\%CAMERA.GUID_AX1%\InprocServer32,ThreadingModel,,Both
+
+HKCR,Wow6432Node\CLSID\%CAMERA.GUID_AX1%,,,%PlugIn_CustomCameraProp%
+HKCR,Wow6432Node\CLSID\%CAMERA.GUID_AX1%\InprocServer32,,,%CAMERA.DextFullName%
+HKCR,Wow6432Node\CLSID\%CAMERA.GUID_AX1%\InprocServer32,ThreadingModel,,Both
+
+HKLM,System\CurrentControlSet\Control\MediaInterfaces\%CAMERA.GUID_AX1%,,,%PlugIn_CustomCameraProp%
+HKLM,System\CurrentControlSet\Control\MediaInterfaces\%CAMERA.GUID_AX1%,IID,1,0xBA,0x42,0x57,0x75, 0xAD,0xC3, 0x0A,0x45, 0xBF, 0x7B, 0x8E, 0x4F, 0x9D, 0x20, 0xA8, 0x30
+
+[Filters.NTamd64.Files]
+DextUVCB_x64.ax
+VCamPPage_x64.dll
+
+[Filters.NTx86.Files]
+DextUVCB.ax
+VCamPPage.dll
+
+; =================== Global ==================================
+
+[CAMERA.CopyDrivers32]
+SPUVCBv.sys
+;STREAM.SYS,,,16
+
+[CAMERA.CopyDrivers64]
+SPUVCBv_x64.sys
+;STREAM.SYS,,,16
+
+[CAMERA.CopyDLL]
+DextUVCB.ax
+VCamPPage.dll
+
+[CAMERA.CopyIni]
+SPRemove.exe
+Remove.ini
+un_dext.exe
+Dext_01.ini
+Dext_02.ini
+Dext_04.ini
+Dext_05.ini
+Dext_06.ini
+Dext_07.ini
+Dext_08.ini
+Dext_09.ini
+Dext_10.ini
+Dext_1046.ini
+Dext_11.ini
+Dext_12.ini
+Dext_13.ini
+Dext_14.ini
+Dext_16.ini
+Dext_17.ini
+Dext_18.ini
+Dext_19.ini
+Dext_20.ini
+Dext_2052.ini
+Dext_21.ini
+Dext_22.ini
+Dext_24.ini
+Dext_25.ini
+Dext_27.ini
+Dext_29.ini
+Dext_30.ini
+Dext_31.ini
+Dext_36.ini
+
+[CAMERA.CopyIni64]
+SPRemove_x64.exe
+Remove.ini
+un_dext.exe
+Dext_01.ini
+Dext_02.ini
+Dext_04.ini
+Dext_05.ini
+Dext_06.ini
+Dext_07.ini
+Dext_08.ini
+Dext_09.ini
+Dext_10.ini
+Dext_1046.ini
+Dext_11.ini
+Dext_12.ini
+Dext_13.ini
+Dext_14.ini
+Dext_16.ini
+Dext_17.ini
+Dext_18.ini
+Dext_19.ini
+Dext_20.ini
+Dext_2052.ini
+Dext_21.ini
+Dext_22.ini
+Dext_24.ini
+Dext_25.ini
+Dext_27.ini
+Dext_29.ini
+Dext_30.ini
+Dext_31.ini
+Dext_36.ini
+
+[SPCoinstaller32]
+CoInstaller.dll
+
+[SPCoinstaller64]
+CoInstaller_x64.dll
+
+[CAMERA.TWAINConf.CopyFiles]
+TWAIN2080.ini
+TWAIN2080.src
+
+[CAMERA.TWAIN.CopyFiles]
+TWAIN2080.ds
+;---------------------------------------------------------------
+
+[Strings]
+ProviderName=  "SunplusIT"
+Chicony.MfgName= "Chicony"
+;SP5X.DeviceDesc= "SP5X Video Compressor and Decompressor"
+DriverName=	 "SPUVCbv"
+DriverFullName=  "SPUVCbv.sys"
+DriverFullName64=  "SPUVCbv_x64.sys"
+DiskName=        "USB WebCam Driver Install Disk"
+
+;Uninstall
+UIF=          "Software\Microsoft\Windows\CurrentVersion\Uninstall\Sunplus SPUVCb"
+UIF_X64=      "Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Sunplus SPUVCb"
+
+MediaCategories="SYSTEM\CurrentControlSet\Control\MediaCategories"
+GUID.VideoStreaming="{DFF229E1-F70F-11D0-B917-00A0C9223196}"
+GUID.VideoInputTerminal="{DFF229E2-F70F-11D0-B917-00A0C9223196}"
+GUID.VideoOutputTerminal="{DFF229E3-F70F-11D0-B917-00A0C9223196}"
+GUID.VideoSelector="{DFF229E4-F70F-11D0-B917-00A0C9223196}"
+GUID.VideoProcessing="{DFF229E5-F70F-11D0-B917-00A0C9223196}"
+GUID.VideoCameraTerminal="{DFF229E6-F70F-11D0-B917-00A0C9223196}"
+GUID.VideoExtensionUnit="{DFF229F0-F70F-11D0-B917-00A0C9223196}"
+
+;Dshext
+PropPage_CustomCameraProp=   "Custom Camera Property Page"
+PlugIn_CustomCameraProp=     " WDM Custom ICustomCamera Interface handler"
+PropPage_CustomVideoProcAmp= "Custom VideoProcAmp Property Page"
+PropPage_CustomSpecialEFfect= "Custom Special Effect Page"
+PropPage_CustomVideoSet= "Custom Video setting Page"
+PropPage_CustomVideoProcAmp1= "Custom VideoProcAmp Property Page"
+PropPage_CustomFaceTrack= "Custom Face Tracking Page"
+PropPage_DDImage="Custom Camera DDImage"
+PropPage_CustomDDImage= "WDM Custom DDImage Interface handler"
+
+;Non-Localizable
+SERVICE_KERNEL_DRIVER=1
+SERVICE_AUTO_START=2
+SERVICE_DEMAND_START=3
+SERVICE_ERROR_NORMAL=1
+ProxyVCap.CLSID="{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+KSCATEGORY_CAPTURE="{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_VIDEO="{6994AD05-93EF-11D0-A3CC-00A0C9223196}"
+
+CAMERA.DextFullName= "DextUVCb.ax"
+CAMERA.DextDLLName= "VCamPPage.dll"
+CAMERA.DextDLLName_x64= "VCamPPage_x64.dll"
+CAMERA.DextFullName_x64 = "DextUVCb_x64.ax"
+CAMERA.DextIniFile = "DextUVCb.ini"
+CAMERA.GUID_AX1= "{755742BA-C3AD-450a-BF7B-8E4F9D20A830}"
+
+CAMERA.GUID_AX4= "{1705F4AB-AF4A-41dc-9FF5-D774C4987E0E}"	;Videoset UI
+;CAMERA.GUID_AX3= "{1F18AB1E-0488-4ee9-BA49-51712AFAD974}"	;specail effect
+;CAMERA.GUID_AX5= "{275F29C0-0E98-450b-B6FF-A41A59E4AC0C}"	;Face tracking
+CAMERA.GUID_AX6= "{BF9783AD-5FE4-4e1f-A31E-34F71B8FB2A2}"	;Amp
+;CAMERA.GUID_AX7= "{984C87BA-469A-4458-823A-4A0E31D2143D}"	;DDImage.
+
+;---------------------------------------------------------------
+CAMERA.DeviceDesc=  "FJ Camera"
+SPUVCb.ServiceName = "SPUVCb Driver Service"
+SPUVCb.Capture=	    "FJ Camera"
+SPUVCb.ProductName= "Sunplus SPUVCb"
+
+PGUID = "{2A8DD8F6-8FB8-4F04-9344-1C44B6BF23D4}"
+Node.VideoStreaming="Video Streaming"
+Node.VideoInputTerminal="Video Input Terminal"
+Node.VideoOutputTerminal="Video Output Terminal"
+Node.VideoSelector="Video Selector"
+Node.VideoProcessing="Video Processing"
+Node.VideoCameraTerminal="Video Camera Terminal"
+Node.VideoExtensionUnit="Video Extension Unit"
