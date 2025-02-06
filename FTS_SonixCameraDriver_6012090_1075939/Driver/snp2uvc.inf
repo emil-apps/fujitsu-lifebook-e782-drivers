@@ -1,0 +1,736 @@
+;==========================================================================
+; USB Video Class Device INF (for Windows XP / Vista /Win7)
+; Copyright(c) 2006 Sonix Technology Co., Ltd.
+; File version: 6.0.1209.0
+; Last modified: 2012-09-05
+;==========================================================================
+
+[Version]
+;LayoutFile = Layout.inf
+signature = "$CHICAGO$"
+Class = Image
+ClassGUID = {6bdd1fc6-810f-11d0-bec7-08002be2092f}
+Provider = %SX%
+CatalogFile.NT = snp2uvc.cat
+DriverVer =  09/05/2012,6.0.1209.0
+
+[Manufacturer]
+%SXTIMfg% = SN, NTx86.5.1, NTx86.6.0, NTx86.6.1, NTamd64, NTamd64.6.0, NTamd64.6.1
+
+[SN]
+
+[SN.NTx86.5.1]
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.XP,USB\VID_04F2&PID_B169	;CNF8248, CNFA256, CNFA286
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.XP,USB\VID_04F2&PID_B186	;CNF9114, CNF9136
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.XP,USB\VID_04F2&PID_B240	;CNFA158, CNFA190
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.XP,USB\VID_04F2&PID_B241	;CNFA230, CNFA252
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.XP,USB\VID_04F2&PID_B213	;CNFA127, CKFA187
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.XP,USB\VID_04F2&PID_B219	;CNFA037, CNFA077
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.XP,USB\VID_04F2&PID_B302	;CNFB185
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.XP,USB\VID_04F2&PID_B300	;CNFB185
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.XP,USB\VID_04F2&PID_B391 ;CNFB185
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.XP,USB\VID_10F1&PID_1A3A	;Importek
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.XP,USB\VID_10F1&PID_1A4A	;Importek
+%SN.USBVideo2.DeviceDesc% = SN.USBVideo2.XP,USB\VID_04F2&PID_B2AA	;CNFA0A3
+
+[SN.NTamd64]
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.x64,USB\VID_04F2&PID_B169
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.x64,USB\VID_04F2&PID_B186
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.x64,USB\VID_04F2&PID_B240
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.x64,USB\VID_04F2&PID_B241
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.x64,USB\VID_04F2&PID_B213
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.x64,USB\VID_04F2&PID_B219
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.x64,USB\VID_04F2&PID_B302
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.x64,USB\VID_04F2&PID_B300
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.x64,USB\VID_04F2&PID_B391
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.x64,USB\VID_10F1&PID_1A3A
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.x64,USB\VID_10F1&PID_1A4A
+%SN.USBVideo2.DeviceDesc% = SN.USBVideo2.x64,USB\VID_04F2&PID_B2AA
+
+[SN.NTx86.6.0]
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v32,USB\VID_04F2&PID_B169&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v32,USB\VID_04F2&PID_B186&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v32,USB\VID_04F2&PID_B240&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v32,USB\VID_04F2&PID_B241&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v32,USB\VID_04F2&PID_B213&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v32,USB\VID_04F2&PID_B219&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v32,USB\VID_04F2&PID_B302&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v32,USB\VID_04F2&PID_B300&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v32,USB\VID_04F2&PID_B391&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v32,USB\VID_10F1&PID_1A3A&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v32,USB\VID_10F1&PID_1A4A&MI_00
+%SN.USBVideo2.DeviceDesc% = SN.USBVideo2.v32,USB\VID_04F2&PID_B2AA&MI_00
+
+[SN.NTamd64.6.0]
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v64,USB\VID_04F2&PID_B169&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v64,USB\VID_04F2&PID_B186&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v64,USB\VID_04F2&PID_B240&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v64,USB\VID_04F2&PID_B241&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v64,USB\VID_04F2&PID_B213&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v64,USB\VID_04F2&PID_B219&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v64,USB\VID_04F2&PID_B302&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v64,USB\VID_04F2&PID_B300&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v64,USB\VID_04F2&PID_B391&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v64,USB\VID_10F1&PID_1A3A&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.v64,USB\VID_10F1&PID_1A4A&MI_00
+%SN.USBVideo2.DeviceDesc% = SN.USBVideo2.v64,USB\VID_04F2&PID_B2AA&MI_00
+
+[SN.NTx86.6.1]
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x86,USB\VID_04F2&PID_B169&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x86,USB\VID_04F2&PID_B186&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x86,USB\VID_04F2&PID_B240&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x86,USB\VID_04F2&PID_B241&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x86,USB\VID_04F2&PID_B213&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x86,USB\VID_04F2&PID_B219&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x86,USB\VID_04F2&PID_B302&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x86,USB\VID_04F2&PID_B300&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x86,USB\VID_04F2&PID_B391&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x86,USB\VID_10F1&PID_1A3A&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x86,USB\VID_10F1&PID_1A4A&MI_00
+%SN.USBVideo2.DeviceDesc% = SN.USBVideo2.w7x86,USB\VID_04F2&PID_B2AA&MI_00
+
+[SN.NTamd64.6.1]
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x64,USB\VID_04F2&PID_B169&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x64,USB\VID_04F2&PID_B186&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x64,USB\VID_04F2&PID_B240&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x64,USB\VID_04F2&PID_B241&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x64,USB\VID_04F2&PID_B213&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x64,USB\VID_04F2&PID_B219&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x64,USB\VID_04F2&PID_B302&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x64,USB\VID_04F2&PID_B300&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x64,USB\VID_04F2&PID_B391&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x64,USB\VID_10F1&PID_1A3A&MI_00
+%SN.USBVideo.DeviceDesc% = SN.USBVideo.w7x64,USB\VID_10F1&PID_1A4A&MI_00
+%SN.USBVideo2.DeviceDesc% = SN.USBVideo2.w7x64,USB\VID_04F2&PID_B2AA&MI_00
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[SourceDisksNames]
+1 = %SrcDiskId%,,,
+
+[SourceDisksFiles.x86] ; files for Windows XP/2000
+snp2uvc.sys = 1
+vsnp2uvc.dll = 1
+rsnp2uvc.dll = 1
+snp2uvc.ds = 1
+snp2uvc.ini = 1
+snp2dsc.ini = 1
+snp2TUI.dll = 1
+snp2uvc.src = 1
+csnp2uvc.dll = 1
+snuvcdsm.exe = 1
+
+[SourceDisksFiles.amd64] ; files for AMD64
+snp2uvc.sys = 1,.\x64,
+vsnp2uvc.dll = 1
+rsnp2uvc.dll = 1
+snp2uvc.ds = 1
+snp2uvc.ini = 1
+snp2dsc.ini = 1
+snp2TUI.dll = 1
+snp2uvc.src = 1
+csnp2uvc.dll = 1,.\x64,
+vsnpvc64.dll = 1,.\x64,
+rsnpvc64.dll = 1,.\x64,
+snuvcdsm.exe = 1
+
+[DestinationDirs]
+DefaultDestDir = 11
+SN.CoInstaller.CopyFiles = 11
+SN.Driver.CopyFiles = 10,system32\drivers
+SN.CustomProp.CopyFiles = 11
+SN.CustomPropx32.CopyFiles = 10,SysWow64
+SN.CustomPropx64.CopyFiles = 11
+SN.TWAINConf.CopyFiles = 10
+SN.TWAIN.CopyFiles = 10,twain_32\snp2uvc
+SN.Misc.CopyFiles = 11
+SN.Rotate.CopyFiles = 10
+
+;==========================================================================
+; *** Note ***
+; File size limits: On Win9x/Me, INF cannot be larger than 64K bytes.
+; Section name max length: 255 characters on NT-based OS. On Win9x/Me, it
+;                          should no longer than 28 characters.
+; Field max length: 512 characters (including a terminating NULL character)
+;==========================================================================
+
+;==========================================================================
+; SN.USBVideo
+;==========================================================================
+[SN.USBVideo.XP]
+Include =    ks.inf,kscaptur.inf
+Needs =      KS.Registration,KSCAPTUR.Registration.NT
+AddReg =     SN.Driver.NT.AddReg,SN.USDClass.XP.AddReg,SN.DefaultSettings.Addreg,SN.CustomProp.AddReg,SN.OSVersion.Addreg,SN.Settings.Addreg
+CopyFiles =  SN.Driver.CopyFiles,SN.CustomProp.CopyFiles,SN.TWAIN.CopyFiles,SN.TWAINConf.CopyFiles,SN.Misc.CopyFiles,SN.Rotate.CopyFiles
+
+SubClass =         StillImage
+DeviceType =       3
+DeviceSubType =    1
+Capabilities =     0x00000031
+Events =	   SN.STIEvents
+DeviceData =       SN.USBVideo.XP.DeviceData
+ICMProfiles =      "sRGB Color Space Profile.icm"
+
+[SN.USBVideo.x64]
+Include =    ks.inf,kscaptur.inf
+Needs =      KS.Registration,KSCAPTUR.Registration.NT
+AddReg =     SN.Driver.NT.AddReg,SN.DefaultSettings.Addreg,SN.CustomProp64.AddReg,SN.OSVersion.Addreg,SN.Settings.Addreg
+CopyFiles =  SN.Driver.CopyFiles,SN.CustomPropx32.CopyFiles,SN.CustomPropx64.CopyFiles,SN.TWAIN.CopyFiles,SN.TWAINConf.CopyFiles,SN.Misc.CopyFiles,SN.Rotate.CopyFiles
+
+SubClass =         StillImage
+DeviceType =       3
+DeviceSubType =    1
+Capabilities =     0x00000031
+Events =	   SN.STIEvents
+DeviceData =       SN.USBVideo.XP.DeviceData
+ICMProfiles =      "sRGB Color Space Profile.icm"
+
+[SN.USBVideo.v32]
+Include =    ks.inf,kscaptur.inf
+Needs =      KS.Registration,KSCAPTUR.Registration.NT
+AddReg =     SN.Driver.NT.AddReg,SN.DefaultSettings.Addreg,SN.CustomProp.AddReg,SN.Events.Addreg,SN.OSVersion.Addreg,SN.Settings.Addreg
+CopyFiles =  SN.Driver.CopyFiles,SN.CustomProp.CopyFiles,SN.TWAIN.CopyFiles,SN.TWAINConf.CopyFiles,SN.Misc.CopyFiles,SN.Rotate.CopyFiles
+
+[SN.USBVideo.v64]
+Include =    ks.inf,kscaptur.inf
+Needs =      KS.Registration,KSCAPTUR.Registration.NT
+AddReg =     SN.Driver.NT.AddReg,SN.DefaultSettings.Addreg,SN.CustomProp64.AddReg,SN.Events.Addreg,SN.OSVersion.Addreg,SN.Settings.Addreg
+CopyFiles =  SN.Driver.CopyFiles,SN.CustomPropx32.CopyFiles,SN.CustomPropx64.CopyFiles,SN.TWAIN.CopyFiles,SN.TWAINConf.CopyFiles,SN.Misc.CopyFiles,SN.Rotate.CopyFiles
+
+[SN.USBVideo.w7x86]
+Include =    ks.inf,kscaptur.inf
+Needs =      KS.Registration,KSCAPTUR.Registration.NT
+AddReg =     SN.Driver.NT.AddReg,SN.DefaultSettings.Addreg,SN.CustomProp.AddReg,SN.Events.Addreg,SN.OSVersion.Addreg,SN.Settings.Addreg
+CopyFiles =  SN.Driver.CopyFiles,SN.CustomProp.CopyFiles,SN.TWAIN.CopyFiles,SN.TWAINConf.CopyFiles,SN.Misc.CopyFiles,SN.Rotate.CopyFiles
+
+[SN.USBVideo.w7x64]
+Include =    ks.inf,kscaptur.inf
+Needs =      KS.Registration,KSCAPTUR.Registration.NT
+AddReg =     SN.Driver.NT.AddReg,SN.DefaultSettings.Addreg,SN.CustomProp64.AddReg,SN.Events.Addreg,SN.OSVersion.Addreg,SN.Settings.Addreg
+CopyFiles =  SN.Driver.CopyFiles,SN.CustomPropx32.CopyFiles,SN.CustomPropx64.CopyFiles,SN.TWAIN.CopyFiles,SN.TWAINConf.CopyFiles,SN.Misc.CopyFiles,SN.Rotate.CopyFiles
+
+[SN.USBVideo.XP.CoInstallers]
+AddReg = SN.CoInstaller.AddReg
+CopyFiles = SN.CoInstaller.CopyFiles
+
+[SN.USBVideo.x64.CoInstallers]
+AddReg = SN.CoInstaller.AddReg
+CopyFiles = SN.CoInstaller.CopyFiles
+
+[SN.USBVideo.v32.CoInstallers]
+AddReg = SN.CoInstaller.AddReg
+CopyFiles = SN.CoInstaller.CopyFiles
+
+[SN.USBVideo.v64.CoInstallers]
+AddReg = SN.CoInstaller.AddReg
+CopyFiles = SN.CoInstaller.CopyFiles
+
+[SN.USBVideo.w7x86.CoInstallers]
+AddReg = SN.CoInstaller.AddReg
+CopyFiles = SN.CoInstaller.CopyFiles
+
+[SN.USBVideo.w7x64.CoInstallers]
+AddReg = SN.CoInstaller.AddReg
+CopyFiles = SN.CoInstaller.CopyFiles
+
+[SN.USBVideo.XP.HW]
+AddReg = SN.USBVideo.HW.AddReg
+
+[SN.USBVideo.x64.HW]
+AddReg = SN.USBVideo.HW.AddReg
+
+[SN.USBVideo.v32.HW]
+AddReg = SN.USBVideo.HW.AddReg
+
+[SN.USBVideo.v64.HW]
+AddReg = SN.USBVideo.HW.AddReg
+
+[SN.USBVideo.w7x86.HW]
+AddReg = SN.USBVideo.HW.AddReg
+
+[SN.USBVideo.w7x64.HW]
+AddReg = SN.USBVideo.HW.AddReg
+
+[SN.USBVideo.HW.AddReg]
+HKR,,"FriendlyName",,%SN.USBVideo.DeviceDesc%
+
+[SN.USBVideo.XP.Interfaces]
+AddInterface = %KSCATEGORY_CAPTURE%,GLOBAL,SN.USBVideo.AddIntf
+AddInterface = %KSCATEGORY_VIDEO%,GLOBAL,SN.USBVideo.AddIntf
+
+[SN.USBVideo.x64.Interfaces]
+AddInterface = %KSCATEGORY_CAPTURE%,GLOBAL,SN.USBVideo.AddIntf
+AddInterface = %KSCATEGORY_VIDEO%,GLOBAL,SN.USBVideo.AddIntf
+
+[SN.USBVideo.v32.Interfaces]
+AddInterface = %KSCATEGORY_CAPTURE%,GLOBAL,SN.USBVideo.AddIntf
+AddInterface = %KSCATEGORY_VIDEO%,GLOBAL,SN.USBVideo.AddIntf
+
+[SN.USBVideo.v64.Interfaces]
+AddInterface = %KSCATEGORY_CAPTURE%,GLOBAL,SN.USBVideo.AddIntf
+AddInterface = %KSCATEGORY_VIDEO%,GLOBAL,SN.USBVideo.AddIntf
+
+[SN.USBVideo.w7x86.Interfaces]
+AddInterface = %KSCATEGORY_CAPTURE%,GLOBAL,SN.USBVideo.AddIntf
+AddInterface = %KSCATEGORY_VIDEO%,GLOBAL,SN.USBVideo.AddIntf
+
+[SN.USBVideo.w7x64.Interfaces]
+AddInterface = %KSCATEGORY_CAPTURE%,GLOBAL,SN.USBVideo.AddIntf
+AddInterface = %KSCATEGORY_VIDEO%,GLOBAL,SN.USBVideo.AddIntf
+
+[SN.USBVideo.XP.Services]
+AddService = SNP2UVC,0x00000002,SN.AddService   
+
+[SN.USBVideo.x64.Services]
+AddService = SNP2UVC,0x00000002,SN.AddService   
+
+[SN.USBVideo.v32.Services]
+AddService = SNP2UVC,0x00000002,SN.AddService   
+
+[SN.USBVideo.v64.Services]
+AddService = SNP2UVC,0x00000002,SN.AddService 
+
+[SN.USBVideo.w7x86.Services]
+AddService = SNP2UVC,0x00000002,SN.AddService   
+
+[SN.USBVideo.w7x64.Services]
+AddService = SNP2UVC,0x00000002,SN.AddService 
+
+[SN.USBVideo.XP.DeviceData]
+TwainDS=%SN.USBVideo.DeviceDesc%
+Server=local
+UI Class ID={5d8ef5a3-ac13-11d2-a093-00c04f72dc3c}
+
+[SN.USBVideo.AddIntf]
+AddReg=SN.USBVideo.AddIntf.AddReg
+
+[SN.USBVideo.AddIntf.AddReg]
+HKR,,CLSID,,%ProxyVCap.CLSID%
+HKR,,FriendlyName,,%SN.USBVideo.DeviceDesc%
+HKR,,ExtensionDLL,,%SN_ExtensionDLL%
+HKR,PageAliases,"{71F96464-78F3-11d0-A18C-00A0C9118956}",1,1d,9f,80,ff, 1d,91, d9,42, 0x82, 0x31, 0x8d, 0x47, 0xca, 0x4e, 0xaf, 0xc2
+HKR,PageAliases,"{71F96465-78F3-11d0-A18C-00A0C9118956}",1,1d,9f,80,ff, 1d,91, d9,42, 0x82, 0x31, 0x8d, 0x47, 0xca, 0x4e, 0xaf, 0xc2
+
+;==========================================================================
+; SN.USBVideo2
+;==========================================================================
+[SN.USBVideo2.XP]
+Include =    ks.inf,kscaptur.inf
+Needs =      KS.Registration,KSCAPTUR.Registration.NT
+AddReg =     SN.Driver.NT.AddReg,SN.USDClass.XP.AddReg,SN.DefaultSettings.Addreg,SN.CustomProp.AddReg,SN.OSVersion.Addreg,SN.Settings.Addreg
+CopyFiles =  SN.Driver.CopyFiles,SN.CustomProp.CopyFiles,SN.TWAIN.CopyFiles,SN.TWAINConf.CopyFiles,SN.Misc.CopyFiles,SN.Rotate.CopyFiles
+
+SubClass =         StillImage
+DeviceType =       3
+DeviceSubType =    1
+Capabilities =     0x00000031
+Events =	   SN.STIEvents
+DeviceData =       SN.USBVideo2.XP.DeviceData
+ICMProfiles =      "sRGB Color Space Profile.icm"
+
+[SN.USBVideo2.x64]
+Include =    ks.inf,kscaptur.inf
+Needs =      KS.Registration,KSCAPTUR.Registration.NT
+AddReg =     SN.Driver.NT.AddReg,SN.DefaultSettings.Addreg,SN.CustomProp64.AddReg,SN.OSVersion.Addreg,SN.Settings.Addreg
+CopyFiles =  SN.Driver.CopyFiles,SN.CustomPropx32.CopyFiles,SN.CustomPropx64.CopyFiles,SN.TWAIN.CopyFiles,SN.TWAINConf.CopyFiles,SN.Misc.CopyFiles,SN.Rotate.CopyFiles
+
+SubClass =         StillImage
+DeviceType =       3
+DeviceSubType =    1
+Capabilities =     0x00000031
+Events =	   SN.STIEvents
+DeviceData =       SN.USBVideo2.XP.DeviceData
+ICMProfiles =      "sRGB Color Space Profile.icm"
+
+[SN.USBVideo2.v32]
+Include =    ks.inf,kscaptur.inf
+Needs =      KS.Registration,KSCAPTUR.Registration.NT
+AddReg =     SN.Driver.NT.AddReg,SN.DefaultSettings.Addreg,SN.CustomProp.AddReg,SN.Events.Addreg,SN.OSVersion.Addreg,SN.Settings.Addreg
+CopyFiles =  SN.Driver.CopyFiles,SN.CustomProp.CopyFiles,SN.TWAIN.CopyFiles,SN.TWAINConf.CopyFiles,SN.Misc.CopyFiles,SN.Rotate.CopyFiles
+
+[SN.USBVideo2.v64]
+Include =    ks.inf,kscaptur.inf
+Needs =      KS.Registration,KSCAPTUR.Registration.NT
+AddReg =     SN.Driver.NT.AddReg,SN.DefaultSettings.Addreg,SN.CustomProp64.AddReg,SN.Events.Addreg,SN.OSVersion.Addreg,SN.Settings.Addreg
+CopyFiles =  SN.Driver.CopyFiles,SN.CustomPropx32.CopyFiles,SN.CustomPropx64.CopyFiles,SN.TWAIN.CopyFiles,SN.TWAINConf.CopyFiles,SN.Misc.CopyFiles,SN.Rotate.CopyFiles
+
+[SN.USBVideo2.w7x86]
+Include =    ks.inf,kscaptur.inf
+Needs =      KS.Registration,KSCAPTUR.Registration.NT
+AddReg =     SN.Driver.NT.AddReg,SN.DefaultSettings.Addreg,SN.CustomProp.AddReg,SN.Events.Addreg,SN.OSVersion.Addreg,SN.Settings.Addreg
+CopyFiles =  SN.Driver.CopyFiles,SN.CustomProp.CopyFiles,SN.TWAIN.CopyFiles,SN.TWAINConf.CopyFiles,SN.Misc.CopyFiles,SN.Rotate.CopyFiles
+
+[SN.USBVideo2.w7x64]
+Include =    ks.inf,kscaptur.inf
+Needs =      KS.Registration,KSCAPTUR.Registration.NT
+AddReg =     SN.Driver.NT.AddReg,SN.DefaultSettings.Addreg,SN.CustomProp64.AddReg,SN.Events.Addreg,SN.OSVersion.Addreg,SN.Settings.Addreg
+CopyFiles =  SN.Driver.CopyFiles,SN.CustomPropx32.CopyFiles,SN.CustomPropx64.CopyFiles,SN.TWAIN.CopyFiles,SN.TWAINConf.CopyFiles,SN.Misc.CopyFiles,SN.Rotate.CopyFiles
+
+[SN.USBVideo2.XP.CoInstallers]
+AddReg = SN.CoInstaller.AddReg
+CopyFiles = SN.CoInstaller.CopyFiles
+
+[SN.USBVideo2.x64.CoInstallers]
+AddReg = SN.CoInstaller.AddReg
+CopyFiles = SN.CoInstaller.CopyFiles
+
+[SN.USBVideo2.v32.CoInstallers]
+AddReg = SN.CoInstaller.AddReg
+CopyFiles = SN.CoInstaller.CopyFiles
+
+[SN.USBVideo2.v64.CoInstallers]
+AddReg = SN.CoInstaller.AddReg
+CopyFiles = SN.CoInstaller.CopyFiles
+
+[SN.USBVideo2.w7x86.CoInstallers]
+AddReg = SN.CoInstaller.AddReg
+CopyFiles = SN.CoInstaller.CopyFiles
+
+[SN.USBVideo2.w7x64.CoInstallers]
+AddReg = SN.CoInstaller.AddReg
+CopyFiles = SN.CoInstaller.CopyFiles
+
+[SN.USBVideo2.XP.HW]
+AddReg = SN.USBVideo2.HW.AddReg
+
+[SN.USBVideo2.x64.HW]
+AddReg = SN.USBVideo2.HW.AddReg
+
+[SN.USBVideo2.v32.HW]
+AddReg = SN.USBVideo2.HW.AddReg
+
+[SN.USBVideo2.v64.HW]
+AddReg = SN.USBVideo2.HW.AddReg
+
+[SN.USBVideo2.w7x86.HW]
+AddReg = SN.USBVideo2.HW.AddReg
+
+[SN.USBVideo2.w7x64.HW]
+AddReg = SN.USBVideo2.HW.AddReg
+
+[SN.USBVideo2.HW.AddReg]
+HKR,,"FriendlyName",,%SN.USBVideo2.DeviceDesc%
+
+[SN.USBVideo2.XP.Interfaces]
+AddInterface = %KSCATEGORY_CAPTURE%,GLOBAL,SN.USBVideo2.AddIntf
+AddInterface = %KSCATEGORY_VIDEO%,GLOBAL,SN.USBVideo2.AddIntf
+
+[SN.USBVideo2.x64.Interfaces]
+AddInterface = %KSCATEGORY_CAPTURE%,GLOBAL,SN.USBVideo2.AddIntf
+AddInterface = %KSCATEGORY_VIDEO%,GLOBAL,SN.USBVideo2.AddIntf
+
+[SN.USBVideo2.v32.Interfaces]
+AddInterface = %KSCATEGORY_CAPTURE%,GLOBAL,SN.USBVideo2.AddIntf
+AddInterface = %KSCATEGORY_VIDEO%,GLOBAL,SN.USBVideo2.AddIntf
+
+[SN.USBVideo2.v64.Interfaces]
+AddInterface = %KSCATEGORY_CAPTURE%,GLOBAL,SN.USBVideo2.AddIntf
+AddInterface = %KSCATEGORY_VIDEO%,GLOBAL,SN.USBVideo2.AddIntf
+
+[SN.USBVideo2.w7x86.Interfaces]
+AddInterface = %KSCATEGORY_CAPTURE%,GLOBAL,SN.USBVideo2.AddIntf
+AddInterface = %KSCATEGORY_VIDEO%,GLOBAL,SN.USBVideo2.AddIntf
+
+[SN.USBVideo2.w7x64.Interfaces]
+AddInterface = %KSCATEGORY_CAPTURE%,GLOBAL,SN.USBVideo2.AddIntf
+AddInterface = %KSCATEGORY_VIDEO%,GLOBAL,SN.USBVideo2.AddIntf
+
+[SN.USBVideo2.XP.Services]
+AddService = SNP2UVC,0x00000002,SN.AddService   
+
+[SN.USBVideo2.x64.Services]
+AddService = SNP2UVC,0x00000002,SN.AddService   
+
+[SN.USBVideo2.v32.Services]
+AddService = SNP2UVC,0x00000002,SN.AddService   
+
+[SN.USBVideo2.v64.Services]
+AddService = SNP2UVC,0x00000002,SN.AddService 
+
+[SN.USBVideo2.w7x86.Services]
+AddService = SNP2UVC,0x00000002,SN.AddService   
+
+[SN.USBVideo2.w7x64.Services]
+AddService = SNP2UVC,0x00000002,SN.AddService 
+
+[SN.USBVideo2.XP.DeviceData]
+TwainDS=%SN.USBVideo2.DeviceDesc%
+Server=local
+UI Class ID={5d8ef5a3-ac13-11d2-a093-00c04f72dc3c}
+
+[SN.USBVideo2.AddIntf]
+AddReg=SN.USBVideo2.AddIntf.AddReg
+
+[SN.USBVideo2.AddIntf.AddReg]
+HKR,,CLSID,,%ProxyVCap.CLSID%
+HKR,,FriendlyName,,%SN.USBVideo2.DeviceDesc%
+HKR,,ExtensionDLL,,%SN_ExtensionDLL%
+HKR,PageAliases,"{71F96464-78F3-11d0-A18C-00A0C9118956}",1,1d,9f,80,ff, 1d,91, d9,42, 0x82, 0x31, 0x8d, 0x47, 0xca, 0x4e, 0xaf, 0xc2
+HKR,PageAliases,"{71F96465-78F3-11d0-A18C-00A0C9118956}",1,1d,9f,80,ff, 1d,91, d9,42, 0x82, 0x31, 0x8d, 0x47, 0xca, 0x4e, 0xaf, 0xc2
+
+;==========================================================================
+; Common Section
+;==========================================================================
+[SN.CoInstaller.AddReg]
+HKR,,CoInstallers32,0x00010000,"csnp2uvc.dll,CoInstaller"
+
+[SN.Driver.NT.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,snp2uvc.sys
+HKR,,PageOutWhenUnopened,3,00
+HKR,,OkToHibernate,3,01 
+HKR,,HardwareConfig,1,1
+HKR,,CreateFileName,,"USB"
+
+[SN.USDClass.XP.AddReg]
+HKR,,USDClass,,{0527d1d0-88c2-11d2-82c7-00c04f8ec183}
+
+[SN.CustomProp.AddReg]
+; Custom property interface
+HKCR,CLSID\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959},,,%PlugIn_CustomCameraProp%
+HKCR,CLSID\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959}\InprocServer32,,,vsnp2uvc.dll
+HKCR,CLSID\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959}\InprocServer32,ThreadingModel,,Both
+; This IID is aggregated for the filter given the CLSID of the property set
+HKLM,System\CurrentControlSet\Control\MediaInterfaces\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959},,,%PlugIn_CustomCameraProp%
+HKLM,System\CurrentControlSet\Control\MediaInterfaces\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959},IID,1,9F,F5,4E,E5, 3E,32, 2e,4a, 0x96, 0xEC, 0x55, 0x99, 0x63, 092, 0x3A, 0x00
+;,IID,1,1D,FC,CA,F1, D6,D7, 0f,40, 0xa7, 0xfd, 0x96, 0x71, 0x5e, 0xb, 0xd9, 0x59
+
+; Setting page
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC2},,,%PropPage_CustomCameraProp%
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC2}\InprocServer32,,,vsnp2uvc.dll
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC2}\InprocServer32,ThreadingModel,,Both
+; Associate the property set with the above property page
+HKLM,System\CurrentControlSet\Control\MediaSets\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959}\PropertyPages\{FF809F1D-911D-42d9-8231-8D47CA4EAFC2),,,%PropPage_CustomCameraProp%
+
+; Effect page
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC3},,,%PropPage_CustomCameraProp%
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC3}\InprocServer32,,,vsnp2uvc.dll
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC3}\InprocServer32,ThreadingModel,,Both
+; Associate the property set with the above property page
+HKLM,System\CurrentControlSet\Control\MediaSets\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959}\PropertyPages\{FF809F1D-911D-42d9-8231-8D47CA4EAFC3},,,%PropPage_CustomCameraProp%
+
+; Zoom page
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC4},,,%PropPage_CustomCameraProp%
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC4}\InprocServer32,,,vsnp2uvc.dll
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC4}\InprocServer32,ThreadingModel,,Both
+; Associate the property set with the above property page
+HKLM,System\CurrentControlSet\Control\MediaSets\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959}\PropertyPages\{FF809F1D-911D-42d9-8231-8D47CA4EAFC4},,,%PropPage_CustomCameraProp%
+
+[SN.CustomProp64.AddReg]
+; Custom property interface
+HKCR,CLSID\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959},,,%PlugIn_CustomCameraProp%
+HKCR,CLSID\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959}\InprocServer32,,,vsnp2uvc.dll
+HKCR,CLSID\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959}\InprocServer32,ThreadingModel,,Both
+HKCR,Wow6432Node\CLSID\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959},,,%PlugIn_CustomCameraProp%
+HKCR,Wow6432Node\CLSID\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959}\InprocServer32,,,vsnp2uvc.dll
+HKCR,Wow6432Node\CLSID\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959}\InprocServer32,ThreadingModel,,Both
+; This IID is aggregated for the filter given the CLSID of the property set
+HKLM,System\CurrentControlSet\Control\MediaInterfaces\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959},,,%PlugIn_CustomCameraProp%
+HKLM,System\CurrentControlSet\Control\MediaInterfaces\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959},IID,1,9F,F5,4E,E5, 3E,32, 2e,4a, 0x96, 0xEC, 0x55, 0x99, 0x63, 092, 0x3A, 0x00
+
+; Setting page
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC2},,,%PropPage_CustomCameraProp%
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC2}\InprocServer32,,,vsnp2uvc.dll
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC2}\InprocServer32,ThreadingModel,,Both
+HKCR,Wow6432Node\CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC2},,,%PlugIn_CustomCameraProp%
+HKCR,Wow6432Node\CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC2}\InprocServer32,,,vsnp2uvc.dll
+HKCR,Wow6432Node\CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC2}\InprocServer32,ThreadingModel,,Both
+; Associate the property set with the above property page
+HKLM,System\CurrentControlSet\Control\MediaSets\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959}\PropertyPages\{FF809F1D-911D-42d9-8231-8D47CA4EAFC2),,,%PropPage_CustomCameraProp%
+
+; Effect page
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC3},,,%PropPage_CustomCameraProp%
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC3}\InprocServer32,,,vsnp2uvc.dll
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC3}\InprocServer32,ThreadingModel,,Both
+HKCR,Wow6432Node\CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC3},,,%PlugIn_CustomCameraProp%
+HKCR,Wow6432Node\CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC3}\InprocServer32,,,vsnp2uvc.dll
+HKCR,Wow6432Node\CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC3}\InprocServer32,ThreadingModel,,Both
+; Associate the property set with the above property page
+HKLM,System\CurrentControlSet\Control\MediaSets\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959}\PropertyPages\{FF809F1D-911D-42d9-8231-8D47CA4EAFC3},,,%PropPage_CustomCameraProp%
+
+; Zoom page
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC4},,,%PropPage_CustomCameraProp%
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC4}\InprocServer32,,,vsnp2uvc.dll
+HKCR,CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC4}\InprocServer32,ThreadingModel,,Both
+HKCR,Wow6432Node\CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC4},,,%PlugIn_CustomCameraProp%
+HKCR,Wow6432Node\CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC4}\InprocServer32,,,vsnp2uvc.dll
+HKCR,Wow6432Node\CLSID\{FF809F1D-911D-42d9-8231-8D47CA4EAFC4}\InprocServer32,ThreadingModel,,Both
+; Associate the property set with the above property page
+HKLM,System\CurrentControlSet\Control\MediaSets\{F1CAFC1D-D7D6-400f-A7FD-96715E0BD959}\PropertyPages\{FF809F1D-911D-42d9-8231-8D47CA4EAFC4},,,%PropPage_CustomCameraProp%
+
+[SN.DefaultSettings.Addreg]
+; all pid/vid
+HKLM,SOFTWARE\SONIX\PCCAM\%ProductName%\PIDS,VP00,0x00010001,0x04F2B169
+HKLM,SOFTWARE\SONIX\PCCAM\%ProductName%\PIDS,VP01,0x00010001,0x04F2B186
+HKLM,SOFTWARE\SONIX\PCCAM\%ProductName%\PIDS,VP02,0x00010001,0x04F2B240
+HKLM,SOFTWARE\SONIX\PCCAM\%ProductName%\PIDS,VP03,0x00010001,0x04F2B241
+HKLM,SOFTWARE\SONIX\PCCAM\%ProductName%\PIDS,VP04,0x00010001,0x04F2B213
+HKLM,SOFTWARE\SONIX\PCCAM\%ProductName%\PIDS,VP05,0x00010001,0x04F2B219
+HKLM,SOFTWARE\SONIX\PCCAM\%ProductName%\PIDS,VP06,0x00010001,0x04F2B2AA
+HKLM,SOFTWARE\SONIX\PCCAM\%ProductName%\PIDS,VP07,0x00010001,0x04F2B302
+HKLM,SOFTWARE\SONIX\PCCAM\%ProductName%\PIDS,VP08,0x00010001,0x04F2B300
+HKLM,SOFTWARE\SONIX\PCCAM\%ProductName%\PIDS,VP09,0x00010001,0x04F2B391
+HKLM,SOFTWARE\SONIX\PCCAM\%ProductName%\PIDS,VP10,0x00010001,0x10F11A3A
+HKLM,SOFTWARE\SONIX\PCCAM\%ProductName%\PIDS,VP11,0x00010001,0x10F11A4A
+
+;Parameter
+
+HKR,DefaultSettings,Privacy,0x00010001,0
+HKR,DefaultSettings,AutoStartEnable,0x00010001,1
+HKR,DefaultSettings,DefectCompensation,0x00010001,0
+HKR,DefaultSettings,DefectYThd,0x00010001,0
+HKR,DefaultSettings,DefectCThd,0x00010001,0
+HKR,DefaultSettings,OSVersion,0x00010001,5
+HKR,DefaultSettings,SuspendEnable,0x00010001,1
+HKR,DefaultSettings,BWMode,0x00010001,0
+HKR,DefaultSettings,Flip,0x00010001,0
+HKR,DefaultSettings,Mirror,0x00010001,0
+HKR,DefaultSettings,AEPriorityControl,0x00010001,1
+HKR,DefaultSettings,EP0Polling,0x00010001,0
+HKR,DefaultSettings,DefaultFrameIndex,0x00010001,5
+HKR,DefaultSettings,SXGA2StillFormatControl,0x00010001,2
+HKR,DefaultSettings,Rotation,0x00010001,0
+HKR,DefaultSettings,SnapshotControl,0x00010001,0
+HKR,DefaultSettings,PropertyPageControl,0x00010001,1
+HKR,DefaultSettings,Disable_RGB24,0x00010001,0
+HKR,DefaultSettings,Disable_I420,0x00010001,1
+HKR,DefaultSettings,Disable_YUY2,0x00010001,0
+HKR,DefaultSettings,Disable_MJPEG,0x00010001,0
+HKR,DefaultSettings,DenoiseMode_UIEnable,0x00010001,0
+HKR,DefaultSettings,InteruptDisable,0x00010001,1
+HKR,DefaultSettings,AddFrameRateFromMJPG,0x00010001,0
+;Denoise
+HKR,DefaultSettings,DeNoiseMode,0x00010001,0
+HKR,DefaultSettings,StrgLThd,0x00010001,15
+HKR,DefaultSettings,StrgCThd,0x00010001,15
+HKR,DefaultSettings,NzPwrLThd,0x00010001,20
+HKR,DefaultSettings,NzPwrCThd,0x00010001,10
+HKR,DefaultSettings,LowLightThd,0x00010001,80
+HKR,DefaultSettings,MeanDiffYThd,0x00010001,8
+HKR,DefaultSettings,MeanDiffCThd,0x00010001,5
+; Face Tracking
+HKR,DefaultSettings,FaceTrack0000,0x00010001,1
+HKR,DefaultSettings,FaceTrack0001,0x00010001,6
+HKR,DefaultSettings,FaceTrack0002,0x00010001,213
+HKR,DefaultSettings,FaceTrack0003,0x00010001,160
+HKR,DefaultSettings,FaceTrack0004,0x00010001,20
+HKR,DefaultSettings,FaceTrack0005,0x00010001,40
+HKR,DefaultSettings,FaceTrack0006,0x00010001,238
+HKR,DefaultSettings,FaceTrack0007,0x00010001,8000
+HKR,DefaultSettings,FaceTrack0008,0x00010001,5
+HKR,DefaultSettings,FaceTrack0009,0x00010001,2
+HKR,DefaultSettings,FaceTrack0010,0x00010001,2
+HKR,DefaultSettings,FaceTrack0011,0x00010001,1
+HKR,DefaultSettings,FaceTrack0012,0x00010001,-4
+HKR,DefaultSettings,FaceTrack0013,0x00010001,66
+HKR,DefaultSettings,FaceTrack0014,0x00010001,8
+HKR,DefaultSettings,FaceTrack0015,0x00010001,20
+HKR,DefaultSettings,FaceTrack0016,0x00010001,90
+HKR,DefaultSettings,FaceTrack0017,0x00010001,200
+HKR,DefaultSettings,FaceTrack0018,0x00010001,770
+HKR,DefaultSettings,FaceTrack0019,0x00010001,60
+HKR,DefaultSettings,FaceTrack0020,0x00010001,30
+HKR,DefaultSettings,FaceTrack0021,0x00010001,20
+HKR,DefaultSettings,FaceTrack0022,0x00010001,1000
+HKR,DefaultSettings,FaceTrack0023,0x00010001,0
+HKR,DefaultSettings,FaceTrack0024,0x00010001,0
+HKR,DefaultSettings,FaceTrack0025,0x00010001,0
+HKR,DefaultSettings,FaceTrack0026,0x00010001,1
+HKR,DefaultSettings,FaceTrack0027,0x00010001,2
+HKR,DefaultSettings,FaceTrack0028,0x00010001,3
+HKR,DefaultSettings,FaceTrack0029,0x00010001,2710
+
+[SN.Events.Addreg] 
+HKR,Events\SnapShotChanged,,0,%SN_SnapShotChanged%
+HKR,Events\SnapShotChanged,GUID,0,"{C76F452C-534A-4f68-A61C-44B35C94B30C}"
+HKR,Events\SnapShotChanged,LaunchApplications,0,"*"
+
+[SN.Events.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[SN.OSVersion.Addreg]
+HKLM,SOFTWARE\SONIX\PCCAM\%ProductName%,OSVersion,0x00010001,1
+
+[SN.OSVersion.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[SN.Settings.Addreg]
+HKR,Settings,ButtonFunc,0x00010001,1
+
+[SN.Settings.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[SN.CoInstaller.CopyFiles]
+csnp2uvc.dll
+
+[SN.Driver.CopyFiles]
+snp2uvc.sys
+
+[SN.CustomProp.CopyFiles]
+vsnp2uvc.dll
+rsnp2uvc.dll
+
+[SN.CustomPropx32.CopyFiles]
+vsnp2uvc.dll
+rsnp2uvc.dll
+
+[SN.CustomPropx64.CopyFiles]
+vsnp2uvc.dll,vsnpvc64.dll
+rsnp2uvc.dll,rsnpvc64.dll
+
+[SN.TWAINConf.CopyFiles]
+snp2uvc.ini
+snp2uvc.src
+
+[SN.Misc.CopyFiles]
+csnp2uvc.dll
+
+[SN.Rotate.CopyFiles]
+snuvcdsm.exe
+
+[SN.TWAIN.CopyFiles]
+snp2uvc.ds
+snp2dsc.ini
+snp2TUI.dll
+
+[SN.AddService]
+DisplayName   = %SERVICE_DISPLAY_NAME%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\snp2uvc.sys
+
+[SN.STIEvents]
+SnapShotChanged = %SN_SnapShotChanged%,{C76F452C-534A-4f68-A61C-44B35C94B30C},*
+
+[{C9F0E5B8-F8E6-42D4-9124-056226777CB5}]
+"FJ Camera" ='"USB\VID_04F2&PID_B169*" "USB\VID_04F2&PID_B186*" "USB\VID_04F2&PID_B240*" "USB\VID_04F2&PID_B241*" "USB\VID_04F2&PID_B213*" "USB\VID_04F2&PID_B219*" "USB\VID_04F2&PID_B302*" "USB\VID_04F2&PID_B300*" "USB\VID_04F2&PID_B391*" "USB\VID_10F1&PID_1A3A*" "USB\VID_10F1&PID_1A4A*"'
+"FJ Webcam" ='"USB\VID_04F2&PID_B2AA*"'
+
+;==========================================================================
+; String Table
+;==========================================================================
+[Strings]
+SrcDiskId = "Video Class Camera Installation Disk"
+KSCATEGORY_CAPTURE="{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_VIDEO="{6994AD05-93EF-11D0-A3CC-00A0C9223196}"
+ProxyVCap.CLSID = "{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+SERVICE_DISPLAY_NAME = "USB2.0 PC Camera (SNP2UVC)"
+SERVICE_KERNEL_DRIVER=1
+SERVICE_DEMAND_START=3
+SERVICE_ERROR_NORMAL=1
+PropPage_CustomCameraProp = "Custom Camera Property Page"
+PlugIn_CustomCameraProp = "WDM Custom ICustomCamera Interface handler"
+RunOncePath = "SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce"
+RunPath = "SOFTWARE\Microsoft\Windows\CurrentVersion\Run"
+SN_SnapShotChanged = "SnapShot Changed Event"
+
+ProductName = "SNP2UVC"
+SN_ExtensionDLL = "vsnp2uvc.dll"
+
+; Localizable =============================================================
+SX = "Sonix"  
+SXTIMfg = "Sonix"
+SN.USBVideo.DeviceDesc="FJ Camera"
+SN.USBVideo2.DeviceDesc="FJ Webcam"
