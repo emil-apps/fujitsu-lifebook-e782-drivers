@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" ?>
+<dpinst>
+    <!-- configurations -->
+    <search>
+        <subDirectory>driver</subDirectory>
+    </search>
+    <suppressAddRemovePrograms />
+    <installAllOrNone />
+    <enableNotListedLanguages />
+
+
+    <!-- English -->
+    <language code="0x0409">
+        <dpinstTitle>Fujitsu FUJ02B1 Device Driver Installation</dpinstTitle>
+        <welcomeTitle>Welcome to FUJ02B1 Device Driver Installation Wizard</welcomeTitle>
+        <welcomeIntro>The Installation Wizard will install Fujitsu FUJ02B1 Device Driver on your computer.</welcomeIntro>
+        <installHeaderTitle>Installing Fujitsu FUJ02B1 Device Driver.</installHeaderTitle>
+        <finishTitle>The installation is complete.</finishTitle>
+        <finishText>The Wizard has succesfully installed Fujitsu FUJ02B1 Device Driver.</finishText>
+    </language>
+
+    <!-- French -->
+    <language code="0x040C">
+        <dpinstTitle>Installation du pilote du logiciel Fujitsu FUJ02B1</dpinstTitle>
+        <welcomeTitle>Bienvenue dans l’assistant d’installation du pilote du logiciel Fujitsu FUJ02B1</welcomeTitle>
+        <welcomeIntro>L'assistant d'installation installera le pilote du logiciel Fujitsu FUJ02B1 sur votre ordinateur.</welcomeIntro>
+        <installHeaderTitle>L'installation du pilote du logiciel Fujitsu FUJ02B1 est en cours.</installHeaderTitle>
+        <finishTitle>L'installation est terminée.</finishTitle>
+        <finishText>L'installation du pilote du logiciel Fujitsu FUJ02B1  est réussie.</finishText>
+    </language>
+
+    <!-- Spanish --> 
+    <language code="0x0C0A">
+        <dpinstTitle>Instalación del controlador de dispositivo del Fujitsu FUJ02B1 Device Driver</dpinstTitle>
+        <welcomeTitle>Bienvenido</welcomeTitle>
+        <welcomeIntro>El Asistente para instalación instalará el controlador de dispositivo del Fujitsu FUJ02B1 Device Driver en su computadora.</welcomeIntro>
+        <installHeaderTitle>Se está instalando el controlador de dispositivo del Fujitsu FUJ02B1 Device Driver.</installHeaderTitle>
+        <finishTitle>Se completó la instalación.</finishTitle>
+        <finishText>El Asistente ha instalado correctamente el controlador de dispositivo del Fujitsu FUJ02B1 Device Driver.</finishText>
+    </language>
+
+    <!-- Japanese -->
+    <language code="0x0411">
+        <dpinstTitle>Fujitsu FUJ02B1 Device Driver のインストール</dpinstTitle>
+        <welcomeTitle>FUJ02B1 Device Driver のインストール ウィザードの開始</welcomeTitle>
+        <welcomeIntro>Fujitsu FUJ02B1 Device Driver をコンピューターにインストールします。</welcomeIntro>
+        <finishTitle>インストールは完了しました。</finishTitle>
+        <finishText>Fujitsu FUJ02B1 Device Driver のインストールに成功しました。</finishText>
+    </language>
+
+    <!-- Traditional Chinese Taiwan-->
+    <language code="0x0404">
+        <dpinstTitle>Fujitsu FUJ02B1 Device Driver 安裝</dpinstTitle>
+        <welcomeTitle>歡迎使用 FUJ02B1 Device Driver 安裝嚮導</welcomeTitle>
+        <welcomeIntro>安裝嚮導將在您的電腦上安裝 Fujitsu FUJ02B1 Device Driver。</welcomeIntro>
+        <finishTitle>完成安裝。</finishTitle>
+        <finishText>該嚮導已成功安裝了 Fujitsu FUJ02B1 Device Driver。</finishText>
+    </language>
+
+    <!-- Traditional Chinese Hong Kong-->
+    <language code="0x0C04">
+        <dpinstTitle>Fujitsu FUJ02B1 Device Driver 安裝</dpinstTitle>
+        <welcomeTitle>歡迎使用 FUJ02B1 Device Driver 安裝嚮導</welcomeTitle>
+        <welcomeIntro>安裝嚮導將在您的電腦上安裝 Fujitsu FUJ02B1 Device Driver。</welcomeIntro>
+        <finishTitle>完成安裝。</finishTitle>
+        <finishText>該嚮導已成功安裝了 Fujitsu FUJ02B1 Device Driver。</finishText>
+    </language>
+
+    <!-- Simplfied Chinese -->
+    <language code="0x0804">
+        <dpinstTitle>Fujitsu FUJ02B1 Device Driver 安裝</dpinstTitle>
+        <welcomeTitle>欢迎使用 FUJ02B1 Device Driver 安装向导</welcomeTitle>
+        <welcomeIntro>安装向导将在您的计算机上安装 Fujitsu FUJ02B1 Device Driver。</welcomeIntro>
+        <finishTitle>完成安裝。</finishTitle>
+        <finishText>该向导已成功安装了 Fujitsu FUJ02B1 Device Driver。</finishText>
+    </language>
+
+</dpinst>
